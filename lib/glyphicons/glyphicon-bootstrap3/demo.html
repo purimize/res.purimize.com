@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!--
+		<meta http-equiv="Content-Security-Policy"
+			  content="default-src 'self' data: gap: 'unsafe-eval' 'unsafe-inline';"/>
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		-->
+		<link type="text/css" rel="stylesheet" href="./glyphicon.css" />
+		<style>
+			body { position:relative; padding:0; margin:0; width:100vw; height:100vh; overflow:auto; font-size:16px; }
+				main { position:relative; z-index:1; width:100%; margin-top:3rem; }
+					main .icon { 
+						float:left; display:flex; justify-content: center; align-items: center;
+						width:4rem; height:4rem; font-size:3rem; margin:0.5rem; cursor:pointer;
+						box-sizing:border-box; border-radius: 10px; border:solid 5px rgba(0,0,0,0);
+					}
+					main .icon.picked, main .icon.selected, main .icon.not-picked {  }
+					main .icon.selected { border-color:#0AA !important;  }
+					main .icon.picked { /*border:solid 5px #A0A;*/ }
+					main .icon.not-picked { display:none; /*color:#BBB;*/ }
+				
+				nav { position:fixed; top:0; left:0; width:100%; height:3rem; line-height:3rem; z-index:999; font-size:2rem; background:#FFF; border-bottom:1px solid #000; box-sizing:border-box; text-align:center; }
+					nav > div:first-child { float:left; width:calc(70% - 1rem); height:100%; margin:0 0.5rem; }
+					nav > div:last-child { float:left; width:calc(30% - 1rem); height:100%; margin:0 0.5rem; }
+						nav > div input[type="text"] {
+							display:block; width:100%; height:100%; padding:0 0.5rem;
+							border:none; font-size:inherit; outline:none;
+						}
+				
+			.clearfix { zoom: 1; }
+			.clearfix:before, .clearfix:after { content: ""; display: table; }
+			.clearfix:after { clear: both; }
+		</style>
+		<title>Bootstrap3 Glyphicons</title>
+	</head>
+	<body>
+		<main class='clearfix' id="display-zone"></main>
+		<nav class='clearfix'>
+			<div id="output-zone">ICON INFO</div>
+			<div id="query-zone"><input id="query-input" type="text" placeholder="Search..."/></div>
+		</nav>
+		<script id="tmpl" type="text/plain">
+asterisk 002a
+plus 002b
+euro eur 20ac
+minus 2212
+cloud 2601
+envelope 2709
+pencil 270f
+glass e001
+music e002
+search e003
+heart e005
+star e006
+star-empty e007
+user e008
+film e009
+th-large e010
+th e011
+th-list e012
+ok e013
+remove e014
+zoom-in e015
+zoom-out e016
+off e017
+signal e018
+cog e019
+trash e020
+home e021
+file e022
+time e023
+road e024
+download-alt e025
+download e026
+upload e027
+inbox e028
+play-circle e029
+repeat e030
+refresh e031
+list-alt e032
+lock e033
+flag e034
+headphones e035
+volume-off e036
+volume-down e037
+volume-up e038
+qrcode e039
+barcode e040
+tag e041
+tags e042
+book e043
+bookmark e044
+print e045
+camera e046
+font e047
+bold e048
+italic e049
+text-height e050
+text-width e051
+align-left e052
+align-center e053
+align-right e054
+align-justify e055
+list e056
+indent-left e057
+indent-right e058
+facetime-video e059
+picture e060
+map-marker e062
+adjust e063
+tint e064
+edit e065
+share e066
+check e067
+move e068
+step-backward e069
+fast-backward e070
+backward e071
+play e072
+pause e073
+stop e074
+forward e075
+fast-forward e076
+step-forward e077
+eject e078
+chevron-left e079
+chevron-right e080
+plus-sign e081
+minus-sign e082
+remove-sign e083
+ok-sign e084
+question-sign e085
+info-sign e086
+screenshot e087
+remove-circle e088
+ok-circle e089
+ban-circle e090
+arrow-left e091
+arrow-right e092
+arrow-up e093
+arrow-down e094
+share-alt e095
+resize-full e096
+resize-small e097
+exclamation-sign e101
+gift e102
+leaf e103
+fire e104
+eye-open e105
+eye-close e106
+warning-sign e107
+plane e108
+calendar e109
+random e110
+comment e111
+magnet e112
+chevron-up e113
+chevron-down e114
+retweet e115
+shopping-cart e116
+folder-close e117
+folder-open e118
+resize-vertical e119
+resize-horizontal e120
+hdd e121
+bullhorn e122
+bell e123
+certificate e124
+thumbs-up e125
+thumbs-down e126
+hand-right e127
+hand-left e128
+hand-up e129
+hand-down e130
+circle-arrow-right e131
+circle-arrow-left e132
+circle-arrow-up e133
+circle-arrow-down e134
+globe e135
+wrench e136
+tasks e137
+filter e138
+briefcase e139
+fullscreen e140
+dashboard e141
+paperclip e142
+heart-empty e143
+link e144
+phone e145
+pushpin e146
+usd e148
+gbp e149
+sort e150
+sort-by-alphabet e151
+sort-by-alphabet-alt e152
+sort-by-order e153
+sort-by-order-alt e154
+sort-by-attributes e155
+sort-by-attributes-alt e156
+unchecked e157
+expand e158
+collapse-down e159
+collapse-up e160
+log-in e161
+flash e162
+log-out e163
+new-window e164
+record e165
+save e166
+open e167
+saved e168
+import e169
+export e170
+send e171
+floppy-disk e172
+floppy-saved e173
+floppy-remove e174
+floppy-save e175
+floppy-open e176
+credit-card e177
+transfer e178
+cutlery e179
+header e180
+compressed e181
+earphone e182
+phone-alt e183
+tower e184
+stats e185
+sd-video e186
+hd-video e187
+subtitles e188
+sound-stereo e189
+sound-dolby e190
+sound-5-1 e191
+sound-6-1 e192
+sound-7-1 e193
+copyright-mark e194
+registration-mark e195
+cloud-download e197
+cloud-upload e198
+tree-conifer e199
+tree-deciduous e200
+cd e201
+save-file e202
+open-file e203
+level-up e204
+copy e205
+paste e206
+alert e209
+equalizer e210
+king e211
+queen e212
+pawn e213
+bishop e214
+knight e215
+baby-formula e216
+tent 26fa
+blackboard e218
+bed e219
+apple f8ff
+erase e221
+hourglass 231b
+lamp e223
+duplicate e224
+piggy-bank e225
+scissors e226
+bitcoin e227
+btc e227
+xbt e227
+yen 00a5
+jpy 00a5
+ruble 20bd
+rub 20bd
+scale e230
+ice-lolly e231
+ice-lolly-tasted e232
+education e233
+option-horizontal e234
+option-vertical e235
+menu-hamburger e236
+modal-window e237
+oil e238
+grain e239
+sunglasses e240
+text-size e241
+text-color e242
+text-background e243
+object-align-top e244
+object-align-bottom e245
+object-align-horizontal e246
+object-align-left e247
+object-align-vertical e248
+object-align-right e249
+triangle-right e250
+triangle-left e251
+triangle-bottom e252
+triangle-top e253
+console e254
+superscript e255
+subscript e256
+menu-left e257
+menu-right e258
+menu-down e259
+menu-up e260
+		</script>
+		<script type="module">
+			const class_prefix = 'glyph-bootstrap3-';
+			const zone = document.querySelector( '#display-zone' );
+			const output = document.querySelector( '#output-zone' );
+			const query_zone = document.querySelector( '#query-input' );
+			
+			
+			const glyphicons = document.querySelector( '#tmpl' ).textContent.trim().split("\n");
+			const all_icons = [];
+			for(const glyphicon of glyphicons) {
+				const names = glyphicon.split(' ');
+				const code_point = names.pop();
+				
+				for ( const name of names ) {
+					const class_name = `${class_prefix}${name.trim().replace(/_/g, '-')}`;
+					const icon = document.createElement( 'div' );
+					icon.classList.add( 'icon' );
+					icon.innerHTML = `<span class='${class_name}'></span>`;
+					icon.dataset.refClass = class_name;
+					icon.dataset.refPoint = code_point;
+					zone.appendChild(icon);
+					all_icons.push(icon);
+				}
+			}
+			
+			
+			query_zone.addEventListener('keyup', function() {
+				const search_text = query_zone.value.trim();
+				if ( search_text === '' ) {
+					for(const item of all_icons) {
+						item.classList.remove( 'picked', 'not-picked' );
+					}
+					return;
+				}
+				
+				
+				const regex = new RegExp( `.*(${search_text}).*` );
+				const all_tags = zone.querySelectorAll( ".icon" );
+				for( const item of all_tags ) {
+					const item_text = item.dataset.refClass.substring(class_prefix.length);
+					if ( regex.test(item_text) ) {
+						item.closest('.icon').classList.add( 'picked' );
+						item.closest('.icon').classList.remove( 'not-picked' );
+					}
+					else {
+						item.closest('.icon').classList.remove( 'picked' );
+						item.closest('.icon').classList.add( 'not-picked' );
+					}
+					
+					
+				}
+			});
+			
+			
+			
+			
+			let current_selection = null;
+			zone.addEventListener('click', function(e){
+				const item = e.target.closest( 'main .icon' );
+				if ( !item ) return;
+				
+				const {refClass:class_name, refPoint:code_point} = item.dataset;
+				output.innerHTML = `CLASS: ${class_name}`;
+				
+				if ( current_selection ) {
+					current_selection.classList.remove( 'selected' );
+				}
+				
+				item.classList.add( 'selected' );
+				current_selection = item;
+			});
+		</script>
+	</body>
+</html>

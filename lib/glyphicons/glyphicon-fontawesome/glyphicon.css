@@ -1,0 +1,2649 @@
+/* Borrowed from Font Awesome */
+@font-face{
+	font-family:'GLYPHICONS-FONT-AWESOME';
+	src:url('./fonts/font.ttf') format('truetype');
+}
+
+[class^="glyph-fontawesome-"]{
+	position:relative;
+	display:inline-block;
+	font-style:normal;
+	font-weight:normal;
+	font-family:'GLYPHICONS-FONT-AWESOME' !important;
+	line-height:1em;
+	text-align: center;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+.glyph-fontawesome-glass:before{
+	content:"\f000";
+}
+
+.glyph-fontawesome-music:before{
+	content:"\f001";
+}
+
+.glyph-fontawesome-search:before{
+	content:"\f002";
+}
+
+.glyph-fontawesome-envelope-o:before{
+	content:"\f003";
+}
+
+.glyph-fontawesome-heart:before{
+	content:"\f004";
+}
+
+.glyph-fontawesome-star:before{
+	content:"\f005";
+}
+
+.glyph-fontawesome-star-o:before{
+	content:"\f006";
+}
+
+.glyph-fontawesome-user:before{
+	content:"\f007";
+}
+
+.glyph-fontawesome-film:before{
+	content:"\f008";
+}
+
+.glyph-fontawesome-th-large:before{
+	content:"\f009";
+}
+
+.glyph-fontawesome-th:before{
+	content:"\f00a";
+}
+
+.glyph-fontawesome-th-list:before{
+	content:"\f00b";
+}
+
+.glyph-fontawesome-check:before{
+	content:"\f00c";
+}
+
+.glyph-fontawesome-remove:before,
+.glyph-fontawesome-close:before,
+.glyph-fontawesome-times:before{
+	content:"\f00d";
+}
+
+.glyph-fontawesome-search-plus:before{
+	content:"\f00e";
+}
+
+.glyph-fontawesome-search-minus:before{
+	content:"\f010";
+}
+
+.glyph-fontawesome-power-off:before{
+	content:"\f011";
+}
+
+.glyph-fontawesome-signal:before{
+	content:"\f012";
+}
+
+.glyph-fontawesome-gear:before,
+.glyph-fontawesome-cog:before{
+	content:"\f013";
+}
+
+.glyph-fontawesome-trash-o:before{
+	content:"\f014";
+}
+
+.glyph-fontawesome-home:before{
+	content:"\f015";
+}
+
+.glyph-fontawesome-file-o:before{
+	content:"\f016";
+}
+
+.glyph-fontawesome-clock-o:before{
+	content:"\f017";
+}
+
+.glyph-fontawesome-road:before{
+	content:"\f018";
+}
+
+.glyph-fontawesome-download:before{
+	content:"\f019";
+}
+
+.glyph-fontawesome-arrow-circle-o-down:before{
+	content:"\f01a";
+}
+
+.glyph-fontawesome-arrow-circle-o-up:before{
+	content:"\f01b";
+}
+
+.glyph-fontawesome-inbox:before{
+	content:"\f01c";
+}
+
+.glyph-fontawesome-play-circle-o:before{
+	content:"\f01d";
+}
+
+.glyph-fontawesome-rotate-right:before,
+.glyph-fontawesome-repeat:before{
+	content:"\f01e";
+}
+
+.glyph-fontawesome-refresh:before{
+	content:"\f021";
+}
+
+.glyph-fontawesome-list-alt:before{
+	content:"\f022";
+}
+
+.glyph-fontawesome-lock:before{
+	content:"\f023";
+}
+
+.glyph-fontawesome-flag:before{
+	content:"\f024";
+}
+
+.glyph-fontawesome-headphones:before{
+	content:"\f025";
+}
+
+.glyph-fontawesome-volume-off:before{
+	content:"\f026";
+}
+
+.glyph-fontawesome-volume-down:before{
+	content:"\f027";
+}
+
+.glyph-fontawesome-volume-up:before{
+	content:"\f028";
+}
+
+.glyph-fontawesome-qrcode:before{
+	content:"\f029";
+}
+
+.glyph-fontawesome-barcode:before{
+	content:"\f02a";
+}
+
+.glyph-fontawesome-tag:before{
+	content:"\f02b";
+}
+
+.glyph-fontawesome-tags:before{
+	content:"\f02c";
+}
+
+.glyph-fontawesome-book:before{
+	content:"\f02d";
+}
+
+.glyph-fontawesome-bookmark:before{
+	content:"\f02e";
+}
+
+.glyph-fontawesome-print:before{
+	content:"\f02f";
+}
+
+.glyph-fontawesome-camera:before{
+	content:"\f030";
+}
+
+.glyph-fontawesome-font:before{
+	content:"\f031";
+}
+
+.glyph-fontawesome-bold:before{
+	content:"\f032";
+}
+
+.glyph-fontawesome-italic:before{
+	content:"\f033";
+}
+
+.glyph-fontawesome-text-height:before{
+	content:"\f034";
+}
+
+.glyph-fontawesome-text-width:before{
+	content:"\f035";
+}
+
+.glyph-fontawesome-align-left:before{
+	content:"\f036";
+}
+
+.glyph-fontawesome-align-center:before{
+	content:"\f037";
+}
+
+.glyph-fontawesome-align-right:before{
+	content:"\f038";
+}
+
+.glyph-fontawesome-align-justify:before{
+	content:"\f039";
+}
+
+.glyph-fontawesome-list:before{
+	content:"\f03a";
+}
+
+.glyph-fontawesome-dedent:before,
+.glyph-fontawesome-outdent:before{
+	content:"\f03b";
+}
+
+.glyph-fontawesome-indent:before{
+	content:"\f03c";
+}
+
+.glyph-fontawesome-video-camera:before{
+	content:"\f03d";
+}
+
+.glyph-fontawesome-photo:before,
+.glyph-fontawesome-image:before,
+.glyph-fontawesome-picture-o:before{
+	content:"\f03e";
+}
+
+.glyph-fontawesome-pencil:before{
+	content:"\f040";
+}
+
+.glyph-fontawesome-map-marker:before{
+	content:"\f041";
+}
+
+.glyph-fontawesome-adjust:before{
+	content:"\f042";
+}
+
+.glyph-fontawesome-tint:before{
+	content:"\f043";
+}
+
+.glyph-fontawesome-edit:before,
+.glyph-fontawesome-pencil-square-o:before{
+	content:"\f044";
+}
+
+.glyph-fontawesome-share-square-o:before{
+	content:"\f045";
+}
+
+.glyph-fontawesome-check-square-o:before{
+	content:"\f046";
+}
+
+.glyph-fontawesome-arrows:before{
+	content:"\f047";
+}
+
+.glyph-fontawesome-step-backward:before{
+	content:"\f048";
+}
+
+.glyph-fontawesome-fast-backward:before{
+	content:"\f049";
+}
+
+.glyph-fontawesome-backward:before{
+	content:"\f04a";
+}
+
+.glyph-fontawesome-play:before{
+	content:"\f04b";
+}
+
+.glyph-fontawesome-pause:before{
+	content:"\f04c";
+}
+
+.glyph-fontawesome-stop:before{
+	content:"\f04d";
+}
+
+.glyph-fontawesome-forward:before{
+	content:"\f04e";
+}
+
+.glyph-fontawesome-fast-forward:before{
+	content:"\f050";
+}
+
+.glyph-fontawesome-step-forward:before{
+	content:"\f051";
+}
+
+.glyph-fontawesome-eject:before{
+	content:"\f052";
+}
+
+.glyph-fontawesome-chevron-left:before{
+	content:"\f053";
+}
+
+.glyph-fontawesome-chevron-right:before{
+	content:"\f054";
+}
+
+.glyph-fontawesome-plus-circle:before{
+	content:"\f055";
+}
+
+.glyph-fontawesome-minus-circle:before{
+	content:"\f056";
+}
+
+.glyph-fontawesome-times-circle:before{
+	content:"\f057";
+}
+
+.glyph-fontawesome-check-circle:before{
+	content:"\f058";
+}
+
+.glyph-fontawesome-question-circle:before{
+	content:"\f059";
+}
+
+.glyph-fontawesome-info-circle:before{
+	content:"\f05a";
+}
+
+.glyph-fontawesome-crosshairs:before{
+	content:"\f05b";
+}
+
+.glyph-fontawesome-times-circle-o:before{
+	content:"\f05c";
+}
+
+.glyph-fontawesome-check-circle-o:before{
+	content:"\f05d";
+}
+
+.glyph-fontawesome-ban:before{
+	content:"\f05e";
+}
+
+.glyph-fontawesome-arrow-left:before{
+	content:"\f060";
+}
+
+.glyph-fontawesome-arrow-right:before{
+	content:"\f061";
+}
+
+.glyph-fontawesome-arrow-up:before{
+	content:"\f062";
+}
+
+.glyph-fontawesome-arrow-down:before{
+	content:"\f063";
+}
+
+.glyph-fontawesome-mail-forward:before,
+.glyph-fontawesome-share:before{
+	content:"\f064";
+}
+
+.glyph-fontawesome-expand:before{
+	content:"\f065";
+}
+
+.glyph-fontawesome-compress:before{
+	content:"\f066";
+}
+
+.glyph-fontawesome-plus:before{
+	content:"\f067";
+}
+
+.glyph-fontawesome-minus:before{
+	content:"\f068";
+}
+
+.glyph-fontawesome-asterisk:before{
+	content:"\f069";
+}
+
+.glyph-fontawesome-exclamation-circle:before{
+	content:"\f06a";
+}
+
+.glyph-fontawesome-gift:before{
+	content:"\f06b";
+}
+
+.glyph-fontawesome-leaf:before{
+	content:"\f06c";
+}
+
+.glyph-fontawesome-fire:before{
+	content:"\f06d";
+}
+
+.glyph-fontawesome-eye:before{
+	content:"\f06e";
+}
+
+.glyph-fontawesome-eye-slash:before{
+	content:"\f070";
+}
+
+.glyph-fontawesome-warning:before,
+.glyph-fontawesome-exclamation-triangle:before{
+	content:"\f071";
+}
+
+.glyph-fontawesome-plane:before{
+	content:"\f072";
+}
+
+.glyph-fontawesome-calendar:before{
+	content:"\f073";
+}
+
+.glyph-fontawesome-random:before{
+	content:"\f074";
+}
+
+.glyph-fontawesome-comment:before{
+	content:"\f075";
+}
+
+.glyph-fontawesome-magnet:before{
+	content:"\f076";
+}
+
+.glyph-fontawesome-chevron-up:before{
+	content:"\f077";
+}
+
+.glyph-fontawesome-chevron-down:before{
+	content:"\f078";
+}
+
+.glyph-fontawesome-retweet:before{
+	content:"\f079";
+}
+
+.glyph-fontawesome-shopping-cart:before{
+	content:"\f07a";
+}
+
+.glyph-fontawesome-folder:before{
+	content:"\f07b";
+}
+
+.glyph-fontawesome-folder-open:before{
+	content:"\f07c";
+}
+
+.glyph-fontawesome-arrows-v:before{
+	content:"\f07d";
+}
+
+.glyph-fontawesome-arrows-h:before{
+	content:"\f07e";
+}
+
+.glyph-fontawesome-bar-chart-o:before,
+.glyph-fontawesome-bar-chart:before{
+	content:"\f080";
+}
+
+.glyph-fontawesome-twitter-square:before{
+	content:"\f081";
+}
+
+.glyph-fontawesome-facebook-square:before{
+	content:"\f082";
+}
+
+.glyph-fontawesome-camera-retro:before{
+	content:"\f083";
+}
+
+.glyph-fontawesome-key:before{
+	content:"\f084";
+}
+
+.glyph-fontawesome-gears:before,
+.glyph-fontawesome-cogs:before{
+	content:"\f085";
+}
+
+.glyph-fontawesome-comments:before{
+	content:"\f086";
+}
+
+.glyph-fontawesome-thumbs-o-up:before{
+	content:"\f087";
+}
+
+.glyph-fontawesome-thumbs-o-down:before{
+	content:"\f088";
+}
+
+.glyph-fontawesome-star-half:before{
+	content:"\f089";
+}
+
+.glyph-fontawesome-heart-o:before{
+	content:"\f08a";
+}
+
+.glyph-fontawesome-sign-out:before{
+	content:"\f08b";
+}
+
+.glyph-fontawesome-linkedin-square:before{
+	content:"\f08c";
+}
+
+.glyph-fontawesome-thumb-tack:before{
+	content:"\f08d";
+}
+
+.glyph-fontawesome-external-link:before{
+	content:"\f08e";
+}
+
+.glyph-fontawesome-sign-in:before{
+	content:"\f090";
+}
+
+.glyph-fontawesome-trophy:before{
+	content:"\f091";
+}
+
+.glyph-fontawesome-github-square:before{
+	content:"\f092";
+}
+
+.glyph-fontawesome-upload:before{
+	content:"\f093";
+}
+
+.glyph-fontawesome-lemon-o:before{
+	content:"\f094";
+}
+
+.glyph-fontawesome-phone:before{
+	content:"\f095";
+}
+
+.glyph-fontawesome-square-o:before{
+	content:"\f096";
+}
+
+.glyph-fontawesome-bookmark-o:before{
+	content:"\f097";
+}
+
+.glyph-fontawesome-phone-square:before{
+	content:"\f098";
+}
+
+.glyph-fontawesome-twitter:before{
+	content:"\f099";
+}
+
+.glyph-fontawesome-facebook-f:before,
+.glyph-fontawesome-facebook:before{
+	content:"\f09a";
+}
+
+.glyph-fontawesome-github:before{
+	content:"\f09b";
+}
+
+.glyph-fontawesome-unlock:before{
+	content:"\f09c";
+}
+
+.glyph-fontawesome-credit-card:before{
+	content:"\f09d";
+}
+
+.glyph-fontawesome-feed:before,
+.glyph-fontawesome-rss:before{
+	content:"\f09e";
+}
+
+.glyph-fontawesome-hdd-o:before{
+	content:"\f0a0";
+}
+
+.glyph-fontawesome-bullhorn:before{
+	content:"\f0a1";
+}
+
+.glyph-fontawesome-bell:before{
+	content:"\f0f3";
+}
+
+.glyph-fontawesome-certificate:before{
+	content:"\f0a3";
+}
+
+.glyph-fontawesome-hand-o-right:before{
+	content:"\f0a4";
+}
+
+.glyph-fontawesome-hand-o-left:before{
+	content:"\f0a5";
+}
+
+.glyph-fontawesome-hand-o-up:before{
+	content:"\f0a6";
+}
+
+.glyph-fontawesome-hand-o-down:before{
+	content:"\f0a7";
+}
+
+.glyph-fontawesome-arrow-circle-left:before{
+	content:"\f0a8";
+}
+
+.glyph-fontawesome-arrow-circle-right:before{
+	content:"\f0a9";
+}
+
+.glyph-fontawesome-arrow-circle-up:before{
+	content:"\f0aa";
+}
+
+.glyph-fontawesome-arrow-circle-down:before{
+	content:"\f0ab";
+}
+
+.glyph-fontawesome-globe:before{
+	content:"\f0ac";
+}
+
+.glyph-fontawesome-wrench:before{
+	content:"\f0ad";
+}
+
+.glyph-fontawesome-tasks:before{
+	content:"\f0ae";
+}
+
+.glyph-fontawesome-filter:before{
+	content:"\f0b0";
+}
+
+.glyph-fontawesome-briefcase:before{
+	content:"\f0b1";
+}
+
+.glyph-fontawesome-arrows-alt:before{
+	content:"\f0b2";
+}
+
+.glyph-fontawesome-group:before,
+.glyph-fontawesome-users:before{
+	content:"\f0c0";
+}
+
+.glyph-fontawesome-chain:before,
+.glyph-fontawesome-link:before{
+	content:"\f0c1";
+}
+
+.glyph-fontawesome-cloud:before{
+	content:"\f0c2";
+}
+
+.glyph-fontawesome-flask:before{
+	content:"\f0c3";
+}
+
+.glyph-fontawesome-cut:before,
+.glyph-fontawesome-scissors:before{
+	content:"\f0c4";
+}
+
+.glyph-fontawesome-copy:before,
+.glyph-fontawesome-files-o:before{
+	content:"\f0c5";
+}
+
+.glyph-fontawesome-paperclip:before{
+	content:"\f0c6";
+}
+
+.glyph-fontawesome-save:before,
+.glyph-fontawesome-floppy-o:before{
+	content:"\f0c7";
+}
+
+.glyph-fontawesome-square:before{
+	content:"\f0c8";
+}
+
+.glyph-fontawesome-navicon:before,
+.glyph-fontawesome-reorder:before,
+.glyph-fontawesome-bars:before{
+	content:"\f0c9";
+}
+
+.glyph-fontawesome-list-ul:before{
+	content:"\f0ca";
+}
+
+.glyph-fontawesome-list-ol:before{
+	content:"\f0cb";
+}
+
+.glyph-fontawesome-strikethrough:before{
+	content:"\f0cc";
+}
+
+.glyph-fontawesome-underline:before{
+	content:"\f0cd";
+}
+
+.glyph-fontawesome-table:before{
+	content:"\f0ce";
+}
+
+.glyph-fontawesome-magic:before{
+	content:"\f0d0";
+}
+
+.glyph-fontawesome-truck:before{
+	content:"\f0d1";
+}
+
+.glyph-fontawesome-pinterest:before{
+	content:"\f0d2";
+}
+
+.glyph-fontawesome-pinterest-square:before{
+	content:"\f0d3";
+}
+
+.glyph-fontawesome-google-plus-square:before{
+	content:"\f0d4";
+}
+
+.glyph-fontawesome-google-plus:before{
+	content:"\f0d5";
+}
+
+.glyph-fontawesome-money:before{
+	content:"\f0d6";
+}
+
+.glyph-fontawesome-caret-down:before{
+	content:"\f0d7";
+}
+
+.glyph-fontawesome-caret-up:before{
+	content:"\f0d8";
+}
+
+.glyph-fontawesome-caret-left:before{
+	content:"\f0d9";
+}
+
+.glyph-fontawesome-caret-right:before{
+	content:"\f0da";
+}
+
+.glyph-fontawesome-columns:before{
+	content:"\f0db";
+}
+
+.glyph-fontawesome-unsorted:before,
+.glyph-fontawesome-sort:before{
+	content:"\f0dc";
+}
+
+.glyph-fontawesome-sort-down:before,
+.glyph-fontawesome-sort-desc:before{
+	content:"\f0dd";
+}
+
+.glyph-fontawesome-sort-up:before,
+.glyph-fontawesome-sort-asc:before{
+	content:"\f0de";
+}
+
+.glyph-fontawesome-envelope:before{
+	content:"\f0e0";
+}
+
+.glyph-fontawesome-linkedin:before{
+	content:"\f0e1";
+}
+
+.glyph-fontawesome-rotate-left:before,
+.glyph-fontawesome-undo:before{
+	content:"\f0e2";
+}
+
+.glyph-fontawesome-legal:before,
+.glyph-fontawesome-gavel:before{
+	content:"\f0e3";
+}
+
+.glyph-fontawesome-dashboard:before,
+.glyph-fontawesome-tachometer:before{
+	content:"\f0e4";
+}
+
+.glyph-fontawesome-comment-o:before{
+	content:"\f0e5";
+}
+
+.glyph-fontawesome-comments-o:before{
+	content:"\f0e6";
+}
+
+.glyph-fontawesome-flash:before,
+.glyph-fontawesome-bolt:before{
+	content:"\f0e7";
+}
+
+.glyph-fontawesome-sitemap:before{
+	content:"\f0e8";
+}
+
+.glyph-fontawesome-umbrella:before{
+	content:"\f0e9";
+}
+
+.glyph-fontawesome-paste:before,
+.glyph-fontawesome-clipboard:before{
+	content:"\f0ea";
+}
+
+.glyph-fontawesome-lightbulb-o:before{
+	content:"\f0eb";
+}
+
+.glyph-fontawesome-exchange:before{
+	content:"\f0ec";
+}
+
+.glyph-fontawesome-cloud-download:before{
+	content:"\f0ed";
+}
+
+.glyph-fontawesome-cloud-upload:before{
+	content:"\f0ee";
+}
+
+.glyph-fontawesome-user-md:before{
+	content:"\f0f0";
+}
+
+.glyph-fontawesome-stethoscope:before{
+	content:"\f0f1";
+}
+
+.glyph-fontawesome-suitcase:before{
+	content:"\f0f2";
+}
+
+.glyph-fontawesome-bell-o:before{
+	content:"\f0a2";
+}
+
+.glyph-fontawesome-coffee:before{
+	content:"\f0f4";
+}
+
+.glyph-fontawesome-cutlery:before{
+	content:"\f0f5";
+}
+
+.glyph-fontawesome-file-text-o:before{
+	content:"\f0f6";
+}
+
+.glyph-fontawesome-building-o:before{
+	content:"\f0f7";
+}
+
+.glyph-fontawesome-hospital-o:before{
+	content:"\f0f8";
+}
+
+.glyph-fontawesome-ambulance:before{
+	content:"\f0f9";
+}
+
+.glyph-fontawesome-medkit:before{
+	content:"\f0fa";
+}
+
+.glyph-fontawesome-fighter-jet:before{
+	content:"\f0fb";
+}
+
+.glyph-fontawesome-beer:before{
+	content:"\f0fc";
+}
+
+.glyph-fontawesome-h-square:before{
+	content:"\f0fd";
+}
+
+.glyph-fontawesome-plus-square:before{
+	content:"\f0fe";
+}
+
+.glyph-fontawesome-angle-double-left:before{
+	content:"\f100";
+}
+
+.glyph-fontawesome-angle-double-right:before{
+	content:"\f101";
+}
+
+.glyph-fontawesome-angle-double-up:before{
+	content:"\f102";
+}
+
+.glyph-fontawesome-angle-double-down:before{
+	content:"\f103";
+}
+
+.glyph-fontawesome-angle-left:before{
+	content:"\f104";
+}
+
+.glyph-fontawesome-angle-right:before{
+	content:"\f105";
+}
+
+.glyph-fontawesome-angle-up:before{
+	content:"\f106";
+}
+
+.glyph-fontawesome-angle-down:before{
+	content:"\f107";
+}
+
+.glyph-fontawesome-desktop:before{
+	content:"\f108";
+}
+
+.glyph-fontawesome-laptop:before{
+	content:"\f109";
+}
+
+.glyph-fontawesome-tablet:before{
+	content:"\f10a";
+}
+
+.glyph-fontawesome-mobile-phone:before,
+.glyph-fontawesome-mobile:before{
+	content:"\f10b";
+}
+
+.glyph-fontawesome-circle-o:before{
+	content:"\f10c";
+}
+
+.glyph-fontawesome-quote-left:before{
+	content:"\f10d";
+}
+
+.glyph-fontawesome-quote-right:before{
+	content:"\f10e";
+}
+
+.glyph-fontawesome-spinner:before{
+	content:"\f110";
+}
+
+.glyph-fontawesome-circle:before{
+	content:"\f111";
+}
+
+.glyph-fontawesome-mail-reply:before,
+.glyph-fontawesome-reply:before{
+	content:"\f112";
+}
+
+.glyph-fontawesome-github-alt:before{
+	content:"\f113";
+}
+
+.glyph-fontawesome-folder-o:before{
+	content:"\f114";
+}
+
+.glyph-fontawesome-folder-open-o:before{
+	content:"\f115";
+}
+
+.glyph-fontawesome-smile-o:before{
+	content:"\f118";
+}
+
+.glyph-fontawesome-frown-o:before{
+	content:"\f119";
+}
+
+.glyph-fontawesome-meh-o:before{
+	content:"\f11a";
+}
+
+.glyph-fontawesome-gamepad:before{
+	content:"\f11b";
+}
+
+.glyph-fontawesome-keyboard-o:before{
+	content:"\f11c";
+}
+
+.glyph-fontawesome-flag-o:before{
+	content:"\f11d";
+}
+
+.glyph-fontawesome-flag-checkered:before{
+	content:"\f11e";
+}
+
+.glyph-fontawesome-terminal:before{
+	content:"\f120";
+}
+
+.glyph-fontawesome-code:before{
+	content:"\f121";
+}
+
+.glyph-fontawesome-mail-reply-all:before,
+.glyph-fontawesome-reply-all:before{
+	content:"\f122";
+}
+
+.glyph-fontawesome-star-half-empty:before,
+.glyph-fontawesome-star-half-full:before,
+.glyph-fontawesome-star-half-o:before{
+	content:"\f123";
+}
+
+.glyph-fontawesome-location-arrow:before{
+	content:"\f124";
+}
+
+.glyph-fontawesome-crop:before{
+	content:"\f125";
+}
+
+.glyph-fontawesome-code-fork:before{
+	content:"\f126";
+}
+
+.glyph-fontawesome-unlink:before,
+.glyph-fontawesome-chain-broken:before{
+	content:"\f127";
+}
+
+.glyph-fontawesome-question:before{
+	content:"\f128";
+}
+
+.glyph-fontawesome-info:before{
+	content:"\f129";
+}
+
+.glyph-fontawesome-exclamation:before{
+	content:"\f12a";
+}
+
+.glyph-fontawesome-superscript:before{
+	content:"\f12b";
+}
+
+.glyph-fontawesome-subscript:before{
+	content:"\f12c";
+}
+
+.glyph-fontawesome-eraser:before{
+	content:"\f12d";
+}
+
+.glyph-fontawesome-puzzle-piece:before{
+	content:"\f12e";
+}
+
+.glyph-fontawesome-microphone:before{
+	content:"\f130";
+}
+
+.glyph-fontawesome-microphone-slash:before{
+	content:"\f131";
+}
+
+.glyph-fontawesome-shield:before{
+	content:"\f132";
+}
+
+.glyph-fontawesome-calendar-o:before{
+	content:"\f133";
+}
+
+.glyph-fontawesome-fire-extinguisher:before{
+	content:"\f134";
+}
+
+.glyph-fontawesome-rocket:before{
+	content:"\f135";
+}
+
+.glyph-fontawesome-maxcdn:before{
+	content:"\f136";
+}
+
+.glyph-fontawesome-chevron-circle-left:before{
+	content:"\f137";
+}
+
+.glyph-fontawesome-chevron-circle-right:before{
+	content:"\f138";
+}
+
+.glyph-fontawesome-chevron-circle-up:before{
+	content:"\f139";
+}
+
+.glyph-fontawesome-chevron-circle-down:before{
+	content:"\f13a";
+}
+
+.glyph-fontawesome-html5:before{
+	content:"\f13b";
+}
+
+.glyph-fontawesome-css3:before{
+	content:"\f13c";
+}
+
+.glyph-fontawesome-anchor:before{
+	content:"\f13d";
+}
+
+.glyph-fontawesome-unlock-alt:before{
+	content:"\f13e";
+}
+
+.glyph-fontawesome-bullseye:before{
+	content:"\f140";
+}
+
+.glyph-fontawesome-ellipsis-h:before{
+	content:"\f141";
+}
+
+.glyph-fontawesome-ellipsis-v:before{
+	content:"\f142";
+}
+
+.glyph-fontawesome-rss-square:before{
+	content:"\f143";
+}
+
+.glyph-fontawesome-play-circle:before{
+	content:"\f144";
+}
+
+.glyph-fontawesome-ticket:before{
+	content:"\f145";
+}
+
+.glyph-fontawesome-minus-square:before{
+	content:"\f146";
+}
+
+.glyph-fontawesome-minus-square-o:before{
+	content:"\f147";
+}
+
+.glyph-fontawesome-level-up:before{
+	content:"\f148";
+}
+
+.glyph-fontawesome-level-down:before{
+	content:"\f149";
+}
+
+.glyph-fontawesome-check-square:before{
+	content:"\f14a";
+}
+
+.glyph-fontawesome-pencil-square:before{
+	content:"\f14b";
+}
+
+.glyph-fontawesome-external-link-square:before{
+	content:"\f14c";
+}
+
+.glyph-fontawesome-share-square:before{
+	content:"\f14d";
+}
+
+.glyph-fontawesome-compass:before{
+	content:"\f14e";
+}
+
+.glyph-fontawesome-toggle-down:before,
+.glyph-fontawesome-caret-square-o-down:before{
+	content:"\f150";
+}
+
+.glyph-fontawesome-toggle-up:before,
+.glyph-fontawesome-caret-square-o-up:before{
+	content:"\f151";
+}
+
+.glyph-fontawesome-toggle-right:before,
+.glyph-fontawesome-caret-square-o-right:before{
+	content:"\f152";
+}
+
+.glyph-fontawesome-euro:before,
+.glyph-fontawesome-eur:before{
+	content:"\f153";
+}
+
+.glyph-fontawesome-gbp:before{
+	content:"\f154";
+}
+
+.glyph-fontawesome-dollar:before,
+.glyph-fontawesome-usd:before{
+	content:"\f155";
+}
+
+.glyph-fontawesome-rupee:before,
+.glyph-fontawesome-inr:before{
+	content:"\f156";
+}
+
+.glyph-fontawesome-cny:before,
+.glyph-fontawesome-rmb:before,
+.glyph-fontawesome-yen:before,
+.glyph-fontawesome-jpy:before{
+	content:"\f157";
+}
+
+.glyph-fontawesome-ruble:before,
+.glyph-fontawesome-rouble:before,
+.glyph-fontawesome-rub:before{
+	content:"\f158";
+}
+
+.glyph-fontawesome-won:before,
+.glyph-fontawesome-krw:before{
+	content:"\f159";
+}
+
+.glyph-fontawesome-bitcoin:before,
+.glyph-fontawesome-btc:before{
+	content:"\f15a";
+}
+
+.glyph-fontawesome-file:before{
+	content:"\f15b";
+}
+
+.glyph-fontawesome-file-text:before{
+	content:"\f15c";
+}
+
+.glyph-fontawesome-sort-alpha-asc:before{
+	content:"\f15d";
+}
+
+.glyph-fontawesome-sort-alpha-desc:before{
+	content:"\f15e";
+}
+
+.glyph-fontawesome-sort-amount-asc:before{
+	content:"\f160";
+}
+
+.glyph-fontawesome-sort-amount-desc:before{
+	content:"\f161";
+}
+
+.glyph-fontawesome-sort-numeric-asc:before{
+	content:"\f162";
+}
+
+.glyph-fontawesome-sort-numeric-desc:before{
+	content:"\f163";
+}
+
+.glyph-fontawesome-thumbs-up:before{
+	content:"\f164";
+}
+
+.glyph-fontawesome-thumbs-down:before{
+	content:"\f165";
+}
+
+.glyph-fontawesome-youtube-square:before{
+	content:"\f166";
+}
+
+.glyph-fontawesome-youtube:before{
+	content:"\f167";
+}
+
+.glyph-fontawesome-xing:before{
+	content:"\f168";
+}
+
+.glyph-fontawesome-xing-square:before{
+	content:"\f169";
+}
+
+.glyph-fontawesome-youtube-play:before{
+	content:"\f16a";
+}
+
+.glyph-fontawesome-dropbox:before{
+	content:"\f16b";
+}
+
+.glyph-fontawesome-stack-overflow:before{
+	content:"\f16c";
+}
+
+.glyph-fontawesome-instagram:before{
+	content:"\f16d";
+}
+
+.glyph-fontawesome-flickr:before{
+	content:"\f16e";
+}
+
+.glyph-fontawesome-adn:before{
+	content:"\f170";
+}
+
+.glyph-fontawesome-bitbucket:before{
+	content:"\f171";
+}
+
+.glyph-fontawesome-bitbucket-square:before{
+	content:"\f172";
+}
+
+.glyph-fontawesome-tumblr:before{
+	content:"\f173";
+}
+
+.glyph-fontawesome-tumblr-square:before{
+	content:"\f174";
+}
+
+.glyph-fontawesome-long-arrow-down:before{
+	content:"\f175";
+}
+
+.glyph-fontawesome-long-arrow-up:before{
+	content:"\f176";
+}
+
+.glyph-fontawesome-long-arrow-left:before{
+	content:"\f177";
+}
+
+.glyph-fontawesome-long-arrow-right:before{
+	content:"\f178";
+}
+
+.glyph-fontawesome-apple:before{
+	content:"\f179";
+}
+
+.glyph-fontawesome-windows:before{
+	content:"\f17a";
+}
+
+.glyph-fontawesome-android:before{
+	content:"\f17b";
+}
+
+.glyph-fontawesome-linux:before{
+	content:"\f17c";
+}
+
+.glyph-fontawesome-dribbble:before{
+	content:"\f17d";
+}
+
+.glyph-fontawesome-skype:before{
+	content:"\f17e";
+}
+
+.glyph-fontawesome-foursquare:before{
+	content:"\f180";
+}
+
+.glyph-fontawesome-trello:before{
+	content:"\f181";
+}
+
+.glyph-fontawesome-female:before{
+	content:"\f182";
+}
+
+.glyph-fontawesome-male:before{
+	content:"\f183";
+}
+
+.glyph-fontawesome-gittip:before,
+.glyph-fontawesome-gratipay:before{
+	content:"\f184";
+}
+
+.glyph-fontawesome-sun-o:before{
+	content:"\f185";
+}
+
+.glyph-fontawesome-moon-o:before{
+	content:"\f186";
+}
+
+.glyph-fontawesome-archive:before{
+	content:"\f187";
+}
+
+.glyph-fontawesome-bug:before{
+	content:"\f188";
+}
+
+.glyph-fontawesome-vk:before{
+	content:"\f189";
+}
+
+.glyph-fontawesome-weibo:before{
+	content:"\f18a";
+}
+
+.glyph-fontawesome-renren:before{
+	content:"\f18b";
+}
+
+.glyph-fontawesome-pagelines:before{
+	content:"\f18c";
+}
+
+.glyph-fontawesome-stack-exchange:before{
+	content:"\f18d";
+}
+
+.glyph-fontawesome-arrow-circle-o-right:before{
+	content:"\f18e";
+}
+
+.glyph-fontawesome-arrow-circle-o-left:before{
+	content:"\f190";
+}
+
+.glyph-fontawesome-toggle-left:before,
+.glyph-fontawesome-caret-square-o-left:before{
+	content:"\f191";
+}
+
+.glyph-fontawesome-dot-circle-o:before{
+	content:"\f192";
+}
+
+.glyph-fontawesome-wheelchair:before{
+	content:"\f193";
+}
+
+.glyph-fontawesome-vimeo-square:before{
+	content:"\f194";
+}
+
+.glyph-fontawesome-turkish-lira:before,
+.glyph-fontawesome-try:before{
+	content:"\f195";
+}
+
+.glyph-fontawesome-plus-square-o:before{
+	content:"\f196";
+}
+
+.glyph-fontawesome-space-shuttle:before{
+	content:"\f197";
+}
+
+.glyph-fontawesome-slack:before{
+	content:"\f198";
+}
+
+.glyph-fontawesome-envelope-square:before{
+	content:"\f199";
+}
+
+.glyph-fontawesome-wordpress:before{
+	content:"\f19a";
+}
+
+.glyph-fontawesome-openid:before{
+	content:"\f19b";
+}
+
+.glyph-fontawesome-institution:before,
+.glyph-fontawesome-bank:before,
+.glyph-fontawesome-university:before{
+	content:"\f19c";
+}
+
+.glyph-fontawesome-mortar-board:before,
+.glyph-fontawesome-graduation-cap:before{
+	content:"\f19d";
+}
+
+.glyph-fontawesome-yahoo:before{
+	content:"\f19e";
+}
+
+.glyph-fontawesome-google:before{
+	content:"\f1a0";
+}
+
+.glyph-fontawesome-reddit:before{
+	content:"\f1a1";
+}
+
+.glyph-fontawesome-reddit-square:before{
+	content:"\f1a2";
+}
+
+.glyph-fontawesome-stumbleupon-circle:before{
+	content:"\f1a3";
+}
+
+.glyph-fontawesome-stumbleupon:before{
+	content:"\f1a4";
+}
+
+.glyph-fontawesome-delicious:before{
+	content:"\f1a5";
+}
+
+.glyph-fontawesome-digg:before{
+	content:"\f1a6";
+}
+
+.glyph-fontawesome-pied-piper-pp:before{
+	content:"\f1a7";
+}
+
+.glyph-fontawesome-pied-piper-alt:before{
+	content:"\f1a8";
+}
+
+.glyph-fontawesome-drupal:before{
+	content:"\f1a9";
+}
+
+.glyph-fontawesome-joomla:before{
+	content:"\f1aa";
+}
+
+.glyph-fontawesome-language:before{
+	content:"\f1ab";
+}
+
+.glyph-fontawesome-fax:before{
+	content:"\f1ac";
+}
+
+.glyph-fontawesome-building:before{
+	content:"\f1ad";
+}
+
+.glyph-fontawesome-child:before{
+	content:"\f1ae";
+}
+
+.glyph-fontawesome-paw:before{
+	content:"\f1b0";
+}
+
+.glyph-fontawesome-spoon:before{
+	content:"\f1b1";
+}
+
+.glyph-fontawesome-cube:before{
+	content:"\f1b2";
+}
+
+.glyph-fontawesome-cubes:before{
+	content:"\f1b3";
+}
+
+.glyph-fontawesome-behance:before{
+	content:"\f1b4";
+}
+
+.glyph-fontawesome-behance-square:before{
+	content:"\f1b5";
+}
+
+.glyph-fontawesome-steam:before{
+	content:"\f1b6";
+}
+
+.glyph-fontawesome-steam-square:before{
+	content:"\f1b7";
+}
+
+.glyph-fontawesome-recycle:before{
+	content:"\f1b8";
+}
+
+.glyph-fontawesome-automobile:before,
+.glyph-fontawesome-car:before{
+	content:"\f1b9";
+}
+
+.glyph-fontawesome-cab:before,
+.glyph-fontawesome-taxi:before{
+	content:"\f1ba";
+}
+
+.glyph-fontawesome-tree:before{
+	content:"\f1bb";
+}
+
+.glyph-fontawesome-spotify:before{
+	content:"\f1bc";
+}
+
+.glyph-fontawesome-deviantart:before{
+	content:"\f1bd";
+}
+
+.glyph-fontawesome-soundcloud:before{
+	content:"\f1be";
+}
+
+.glyph-fontawesome-database:before{
+	content:"\f1c0";
+}
+
+.glyph-fontawesome-file-pdf-o:before{
+	content:"\f1c1";
+}
+
+.glyph-fontawesome-file-word-o:before{
+	content:"\f1c2";
+}
+
+.glyph-fontawesome-file-excel-o:before{
+	content:"\f1c3";
+}
+
+.glyph-fontawesome-file-powerpoint-o:before{
+	content:"\f1c4";
+}
+
+.glyph-fontawesome-file-photo-o:before,
+.glyph-fontawesome-file-picture-o:before,
+.glyph-fontawesome-file-image-o:before{
+	content:"\f1c5";
+}
+
+.glyph-fontawesome-file-zip-o:before,
+.glyph-fontawesome-file-archive-o:before{
+	content:"\f1c6";
+}
+
+.glyph-fontawesome-file-sound-o:before,
+.glyph-fontawesome-file-audio-o:before{
+	content:"\f1c7";
+}
+
+.glyph-fontawesome-file-movie-o:before,
+.glyph-fontawesome-file-video-o:before{
+	content:"\f1c8";
+}
+
+.glyph-fontawesome-file-code-o:before{
+	content:"\f1c9";
+}
+
+.glyph-fontawesome-vine:before{
+	content:"\f1ca";
+}
+
+.glyph-fontawesome-codepen:before{
+	content:"\f1cb";
+}
+
+.glyph-fontawesome-jsfiddle:before{
+	content:"\f1cc";
+}
+
+.glyph-fontawesome-life-bouy:before,
+.glyph-fontawesome-life-buoy:before,
+.glyph-fontawesome-life-saver:before,
+.glyph-fontawesome-support:before,
+.glyph-fontawesome-life-ring:before{
+	content:"\f1cd";
+}
+
+.glyph-fontawesome-circle-o-notch:before{
+	content:"\f1ce";
+}
+
+.glyph-fontawesome-ra:before,
+.glyph-fontawesome-resistance:before,
+.glyph-fontawesome-rebel:before{
+	content:"\f1d0";
+}
+
+.glyph-fontawesome-ge:before,
+.glyph-fontawesome-empire:before{
+	content:"\f1d1";
+}
+
+.glyph-fontawesome-git-square:before{
+	content:"\f1d2";
+}
+
+.glyph-fontawesome-git:before{
+	content:"\f1d3";
+}
+
+.glyph-fontawesome-y-combinator-square:before,
+.glyph-fontawesome-yc-square:before,
+.glyph-fontawesome-hacker-news:before{
+	content:"\f1d4";
+}
+
+.glyph-fontawesome-tencent-weibo:before{
+	content:"\f1d5";
+}
+
+.glyph-fontawesome-qq:before{
+	content:"\f1d6";
+}
+
+.glyph-fontawesome-wechat:before,
+.glyph-fontawesome-weixin:before{
+	content:"\f1d7";
+}
+
+.glyph-fontawesome-send:before,
+.glyph-fontawesome-paper-plane:before{
+	content:"\f1d8";
+}
+
+.glyph-fontawesome-send-o:before,
+.glyph-fontawesome-paper-plane-o:before{
+	content:"\f1d9";
+}
+
+.glyph-fontawesome-history:before{
+	content:"\f1da";
+}
+
+.glyph-fontawesome-circle-thin:before{
+	content:"\f1db";
+}
+
+.glyph-fontawesome-header:before{
+	content:"\f1dc";
+}
+
+.glyph-fontawesome-paragraph:before{
+	content:"\f1dd";
+}
+
+.glyph-fontawesome-sliders:before{
+	content:"\f1de";
+}
+
+.glyph-fontawesome-share-alt:before{
+	content:"\f1e0";
+}
+
+.glyph-fontawesome-share-alt-square:before{
+	content:"\f1e1";
+}
+
+.glyph-fontawesome-bomb:before{
+	content:"\f1e2";
+}
+
+.glyph-fontawesome-soccer-ball-o:before,
+.glyph-fontawesome-futbol-o:before{
+	content:"\f1e3";
+}
+
+.glyph-fontawesome-tty:before{
+	content:"\f1e4";
+}
+
+.glyph-fontawesome-binoculars:before{
+	content:"\f1e5";
+}
+
+.glyph-fontawesome-plug:before{
+	content:"\f1e6";
+}
+
+.glyph-fontawesome-slideshare:before{
+	content:"\f1e7";
+}
+
+.glyph-fontawesome-twitch:before{
+	content:"\f1e8";
+}
+
+.glyph-fontawesome-yelp:before{
+	content:"\f1e9";
+}
+
+.glyph-fontawesome-newspaper-o:before{
+	content:"\f1ea";
+}
+
+.glyph-fontawesome-wifi:before{
+	content:"\f1eb";
+}
+
+.glyph-fontawesome-calculator:before{
+	content:"\f1ec";
+}
+
+.glyph-fontawesome-paypal:before{
+	content:"\f1ed";
+}
+
+.glyph-fontawesome-google-wallet:before{
+	content:"\f1ee";
+}
+
+.glyph-fontawesome-cc-visa:before{
+	content:"\f1f0";
+}
+
+.glyph-fontawesome-cc-mastercard:before{
+	content:"\f1f1";
+}
+
+.glyph-fontawesome-cc-discover:before{
+	content:"\f1f2";
+}
+
+.glyph-fontawesome-cc-amex:before{
+	content:"\f1f3";
+}
+
+.glyph-fontawesome-cc-paypal:before{
+	content:"\f1f4";
+}
+
+.glyph-fontawesome-cc-stripe:before{
+	content:"\f1f5";
+}
+
+.glyph-fontawesome-bell-slash:before{
+	content:"\f1f6";
+}
+
+.glyph-fontawesome-bell-slash-o:before{
+	content:"\f1f7";
+}
+
+.glyph-fontawesome-trash:before{
+	content:"\f1f8";
+}
+
+.glyph-fontawesome-copyright:before{
+	content:"\f1f9";
+}
+
+.glyph-fontawesome-at:before{
+	content:"\f1fa";
+}
+
+.glyph-fontawesome-eyedropper:before{
+	content:"\f1fb";
+}
+
+.glyph-fontawesome-paint-brush:before{
+	content:"\f1fc";
+}
+
+.glyph-fontawesome-birthday-cake:before{
+	content:"\f1fd";
+}
+
+.glyph-fontawesome-area-chart:before{
+	content:"\f1fe";
+}
+
+.glyph-fontawesome-pie-chart:before{
+	content:"\f200";
+}
+
+.glyph-fontawesome-line-chart:before{
+	content:"\f201";
+}
+
+.glyph-fontawesome-lastfm:before{
+	content:"\f202";
+}
+
+.glyph-fontawesome-lastfm-square:before{
+	content:"\f203";
+}
+
+.glyph-fontawesome-toggle-off:before{
+	content:"\f204";
+}
+
+.glyph-fontawesome-toggle-on:before{
+	content:"\f205";
+}
+
+.glyph-fontawesome-bicycle:before{
+	content:"\f206";
+}
+
+.glyph-fontawesome-bus:before{
+	content:"\f207";
+}
+
+.glyph-fontawesome-ioxhost:before{
+	content:"\f208";
+}
+
+.glyph-fontawesome-angellist:before{
+	content:"\f209";
+}
+
+.glyph-fontawesome-cc:before{
+	content:"\f20a";
+}
+
+.glyph-fontawesome-shekel:before,
+.glyph-fontawesome-sheqel:before,
+.glyph-fontawesome-ils:before{
+	content:"\f20b";
+}
+
+.glyph-fontawesome-meanpath:before{
+	content:"\f20c";
+}
+
+.glyph-fontawesome-buysellads:before{
+	content:"\f20d";
+}
+
+.glyph-fontawesome-connectdevelop:before{
+	content:"\f20e";
+}
+
+.glyph-fontawesome-dashcube:before{
+	content:"\f210";
+}
+
+.glyph-fontawesome-forumbee:before{
+	content:"\f211";
+}
+
+.glyph-fontawesome-leanpub:before{
+	content:"\f212";
+}
+
+.glyph-fontawesome-sellsy:before{
+	content:"\f213";
+}
+
+.glyph-fontawesome-shirtsinbulk:before{
+	content:"\f214";
+}
+
+.glyph-fontawesome-simplybuilt:before{
+	content:"\f215";
+}
+
+.glyph-fontawesome-skyatlas:before{
+	content:"\f216";
+}
+
+.glyph-fontawesome-cart-plus:before{
+	content:"\f217";
+}
+
+.glyph-fontawesome-cart-arrow-down:before{
+	content:"\f218";
+}
+
+.glyph-fontawesome-diamond:before{
+	content:"\f219";
+}
+
+.glyph-fontawesome-ship:before{
+	content:"\f21a";
+}
+
+.glyph-fontawesome-user-secret:before{
+	content:"\f21b";
+}
+
+.glyph-fontawesome-motorcycle:before{
+	content:"\f21c";
+}
+
+.glyph-fontawesome-street-view:before{
+	content:"\f21d";
+}
+
+.glyph-fontawesome-heartbeat:before{
+	content:"\f21e";
+}
+
+.glyph-fontawesome-venus:before{
+	content:"\f221";
+}
+
+.glyph-fontawesome-mars:before{
+	content:"\f222";
+}
+
+.glyph-fontawesome-mercury:before{
+	content:"\f223";
+}
+
+.glyph-fontawesome-intersex:before,
+.glyph-fontawesome-transgender:before{
+	content:"\f224";
+}
+
+.glyph-fontawesome-transgender-alt:before{
+	content:"\f225";
+}
+
+.glyph-fontawesome-venus-double:before{
+	content:"\f226";
+}
+
+.glyph-fontawesome-mars-double:before{
+	content:"\f227";
+}
+
+.glyph-fontawesome-venus-mars:before{
+	content:"\f228";
+}
+
+.glyph-fontawesome-mars-stroke:before{
+	content:"\f229";
+}
+
+.glyph-fontawesome-mars-stroke-v:before{
+	content:"\f22a";
+}
+
+.glyph-fontawesome-mars-stroke-h:before{
+	content:"\f22b";
+}
+
+.glyph-fontawesome-neuter:before{
+	content:"\f22c";
+}
+
+.glyph-fontawesome-genderless:before{
+	content:"\f22d";
+}
+
+.glyph-fontawesome-facebook-official:before{
+	content:"\f230";
+}
+
+.glyph-fontawesome-pinterest-p:before{
+	content:"\f231";
+}
+
+.glyph-fontawesome-whatsapp:before{
+	content:"\f232";
+}
+
+.glyph-fontawesome-server:before{
+	content:"\f233";
+}
+
+.glyph-fontawesome-user-plus:before{
+	content:"\f234";
+}
+
+.glyph-fontawesome-user-times:before{
+	content:"\f235";
+}
+
+.glyph-fontawesome-hotel:before,
+.glyph-fontawesome-bed:before{
+	content:"\f236";
+}
+
+.glyph-fontawesome-viacoin:before{
+	content:"\f237";
+}
+
+.glyph-fontawesome-train:before{
+	content:"\f238";
+}
+
+.glyph-fontawesome-subway:before{
+	content:"\f239";
+}
+
+.glyph-fontawesome-medium:before{
+	content:"\f23a";
+}
+
+.glyph-fontawesome-yc:before,
+.glyph-fontawesome-y-combinator:before{
+	content:"\f23b";
+}
+
+.glyph-fontawesome-optin-monster:before{
+	content:"\f23c";
+}
+
+.glyph-fontawesome-opencart:before{
+	content:"\f23d";
+}
+
+.glyph-fontawesome-expeditedssl:before{
+	content:"\f23e";
+}
+
+.glyph-fontawesome-battery-4:before,
+.glyph-fontawesome-battery-full:before{
+	content:"\f240";
+}
+
+.glyph-fontawesome-battery-3:before,
+.glyph-fontawesome-battery-three-quarters:before{
+	content:"\f241";
+}
+
+.glyph-fontawesome-battery-2:before,
+.glyph-fontawesome-battery-half:before{
+	content:"\f242";
+}
+
+.glyph-fontawesome-battery-1:before,
+.glyph-fontawesome-battery-quarter:before{
+	content:"\f243";
+}
+
+.glyph-fontawesome-battery-0:before,
+.glyph-fontawesome-battery-empty:before{
+	content:"\f244";
+}
+
+.glyph-fontawesome-mouse-pointer:before{
+	content:"\f245";
+}
+
+.glyph-fontawesome-i-cursor:before{
+	content:"\f246";
+}
+
+.glyph-fontawesome-object-group:before{
+	content:"\f247";
+}
+
+.glyph-fontawesome-object-ungroup:before{
+	content:"\f248";
+}
+
+.glyph-fontawesome-sticky-note:before{
+	content:"\f249";
+}
+
+.glyph-fontawesome-sticky-note-o:before{
+	content:"\f24a";
+}
+
+.glyph-fontawesome-cc-jcb:before{
+	content:"\f24b";
+}
+
+.glyph-fontawesome-cc-diners-club:before{
+	content:"\f24c";
+}
+
+.glyph-fontawesome-clone:before{
+	content:"\f24d";
+}
+
+.glyph-fontawesome-balance-scale:before{
+	content:"\f24e";
+}
+
+.glyph-fontawesome-hourglass-o:before{
+	content:"\f250";
+}
+
+.glyph-fontawesome-hourglass-1:before,
+.glyph-fontawesome-hourglass-start:before{
+	content:"\f251";
+}
+
+.glyph-fontawesome-hourglass-2:before,
+.glyph-fontawesome-hourglass-half:before{
+	content:"\f252";
+}
+
+.glyph-fontawesome-hourglass-3:before,
+.glyph-fontawesome-hourglass-end:before{
+	content:"\f253";
+}
+
+.glyph-fontawesome-hourglass:before{
+	content:"\f254";
+}
+
+.glyph-fontawesome-hand-grab-o:before,
+.glyph-fontawesome-hand-rock-o:before{
+	content:"\f255";
+}
+
+.glyph-fontawesome-hand-stop-o:before,
+.glyph-fontawesome-hand-paper-o:before{
+	content:"\f256";
+}
+
+.glyph-fontawesome-hand-scissors-o:before{
+	content:"\f257";
+}
+
+.glyph-fontawesome-hand-lizard-o:before{
+	content:"\f258";
+}
+
+.glyph-fontawesome-hand-spock-o:before{
+	content:"\f259";
+}
+
+.glyph-fontawesome-hand-pointer-o:before{
+	content:"\f25a";
+}
+
+.glyph-fontawesome-hand-peace-o:before{
+	content:"\f25b";
+}
+
+.glyph-fontawesome-trademark:before{
+	content:"\f25c";
+}
+
+.glyph-fontawesome-registered:before{
+	content:"\f25d";
+}
+
+.glyph-fontawesome-creative-commons:before{
+	content:"\f25e";
+}
+
+.glyph-fontawesome-gg:before{
+	content:"\f260";
+}
+
+.glyph-fontawesome-gg-circle:before{
+	content:"\f261";
+}
+
+.glyph-fontawesome-tripadvisor:before{
+	content:"\f262";
+}
+
+.glyph-fontawesome-odnoklassniki:before{
+	content:"\f263";
+}
+
+.glyph-fontawesome-odnoklassniki-square:before{
+	content:"\f264";
+}
+
+.glyph-fontawesome-get-pocket:before{
+	content:"\f265";
+}
+
+.glyph-fontawesome-wikipedia-w:before{
+	content:"\f266";
+}
+
+.glyph-fontawesome-safari:before{
+	content:"\f267";
+}
+
+.glyph-fontawesome-chrome:before{
+	content:"\f268";
+}
+
+.glyph-fontawesome-firefox:before{
+	content:"\f269";
+}
+
+.glyph-fontawesome-opera:before{
+	content:"\f26a";
+}
+
+.glyph-fontawesome-internet-explorer:before{
+	content:"\f26b";
+}
+
+.glyph-fontawesome-tv:before,
+.glyph-fontawesome-television:before{
+	content:"\f26c";
+}
+
+.glyph-fontawesome-contao:before{
+	content:"\f26d";
+}
+
+.glyph-fontawesome-500px:before{
+	content:"\f26e";
+}
+
+.glyph-fontawesome-amazon:before{
+	content:"\f270";
+}
+
+.glyph-fontawesome-calendar-plus-o:before{
+	content:"\f271";
+}
+
+.glyph-fontawesome-calendar-minus-o:before{
+	content:"\f272";
+}
+
+.glyph-fontawesome-calendar-times-o:before{
+	content:"\f273";
+}
+
+.glyph-fontawesome-calendar-check-o:before{
+	content:"\f274";
+}
+
+.glyph-fontawesome-industry:before{
+	content:"\f275";
+}
+
+.glyph-fontawesome-map-pin:before{
+	content:"\f276";
+}
+
+.glyph-fontawesome-map-signs:before{
+	content:"\f277";
+}
+
+.glyph-fontawesome-map-o:before{
+	content:"\f278";
+}
+
+.glyph-fontawesome-map:before{
+	content:"\f279";
+}
+
+.glyph-fontawesome-commenting:before{
+	content:"\f27a";
+}
+
+.glyph-fontawesome-commenting-o:before{
+	content:"\f27b";
+}
+
+.glyph-fontawesome-houzz:before{
+	content:"\f27c";
+}
+
+.glyph-fontawesome-vimeo:before{
+	content:"\f27d";
+}
+
+.glyph-fontawesome-black-tie:before{
+	content:"\f27e";
+}
+
+.glyph-fontawesome-fonticons:before{
+	content:"\f280";
+}
+
+.glyph-fontawesome-reddit-alien:before{
+	content:"\f281";
+}
+
+.glyph-fontawesome-edge:before{
+	content:"\f282";
+}
+
+.glyph-fontawesome-credit-card-alt:before{
+	content:"\f283";
+}
+
+.glyph-fontawesome-codiepie:before{
+	content:"\f284";
+}
+
+.glyph-fontawesome-modx:before{
+	content:"\f285";
+}
+
+.glyph-fontawesome-fort-awesome:before{
+	content:"\f286";
+}
+
+.glyph-fontawesome-usb:before{
+	content:"\f287";
+}
+
+.glyph-fontawesome-product-hunt:before{
+	content:"\f288";
+}
+
+.glyph-fontawesome-mixcloud:before{
+	content:"\f289";
+}
+
+.glyph-fontawesome-scribd:before{
+	content:"\f28a";
+}
+
+.glyph-fontawesome-pause-circle:before{
+	content:"\f28b";
+}
+
+.glyph-fontawesome-pause-circle-o:before{
+	content:"\f28c";
+}
+
+.glyph-fontawesome-stop-circle:before{
+	content:"\f28d";
+}
+
+.glyph-fontawesome-stop-circle-o:before{
+	content:"\f28e";
+}
+
+.glyph-fontawesome-shopping-bag:before{
+	content:"\f290";
+}
+
+.glyph-fontawesome-shopping-basket:before{
+	content:"\f291";
+}
+
+.glyph-fontawesome-hashtag:before{
+	content:"\f292";
+}
+
+.glyph-fontawesome-bluetooth:before{
+	content:"\f293";
+}
+
+.glyph-fontawesome-bluetooth-b:before{
+	content:"\f294";
+}
+
+.glyph-fontawesome-percent:before{
+	content:"\f295";
+}
+
+.glyph-fontawesome-gitlab:before{
+	content:"\f296";
+}
+
+.glyph-fontawesome-wpbeginner:before{
+	content:"\f297";
+}
+
+.glyph-fontawesome-wpforms:before{
+	content:"\f298";
+}
+
+.glyph-fontawesome-envira:before{
+	content:"\f299";
+}
+
+.glyph-fontawesome-universal-access:before{
+	content:"\f29a";
+}
+
+.glyph-fontawesome-wheelchair-alt:before{
+	content:"\f29b";
+}
+
+.glyph-fontawesome-question-circle-o:before{
+	content:"\f29c";
+}
+
+.glyph-fontawesome-blind:before{
+	content:"\f29d";
+}
+
+.glyph-fontawesome-audio-description:before{
+	content:"\f29e";
+}
+
+.glyph-fontawesome-volume-control-phone:before{
+	content:"\f2a0";
+}
+
+.glyph-fontawesome-braille:before{
+	content:"\f2a1";
+}
+
+.glyph-fontawesome-assistive-listening-systems:before{
+	content:"\f2a2";
+}
+
+.glyph-fontawesome-asl-interpreting:before,
+.glyph-fontawesome-american-sign-language-interpreting:before{
+	content:"\f2a3";
+}
+
+.glyph-fontawesome-deafness:before,
+.glyph-fontawesome-hard-of-hearing:before,
+.glyph-fontawesome-deaf:before{
+	content:"\f2a4";
+}
+
+.glyph-fontawesome-glide:before{
+	content:"\f2a5";
+}
+
+.glyph-fontawesome-glide-g:before{
+	content:"\f2a6";
+}
+
+.glyph-fontawesome-signing:before,
+.glyph-fontawesome-sign-language:before{
+	content:"\f2a7";
+}
+
+.glyph-fontawesome-low-vision:before{
+	content:"\f2a8";
+}
+
+.glyph-fontawesome-viadeo:before{
+	content:"\f2a9";
+}
+
+.glyph-fontawesome-viadeo-square:before{
+	content:"\f2aa";
+}
+
+.glyph-fontawesome-snapchat:before{
+	content:"\f2ab";
+}
+
+.glyph-fontawesome-snapchat-ghost:before{
+	content:"\f2ac";
+}
+
+.glyph-fontawesome-snapchat-square:before{
+	content:"\f2ad";
+}
+
+.glyph-fontawesome-pied-piper:before{
+	content:"\f2ae";
+}
+
+.glyph-fontawesome-first-order:before{
+	content:"\f2b0";
+}
+
+.glyph-fontawesome-yoast:before{
+	content:"\f2b1";
+}
+
+.glyph-fontawesome-themeisle:before{
+	content:"\f2b2";
+}
+
+.glyph-fontawesome-google-plus-circle:before,
+.glyph-fontawesome-google-plus-official:before{
+	content:"\f2b3";
+}
+
+.glyph-fontawesome-fa:before,
+.glyph-fontawesome-font-awesome:before{
+	content:"\f2b4";
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!--
+		<meta http-equiv="Content-Security-Policy"
+			  content="default-src 'self' data: gap: 'unsafe-eval' 'unsafe-inline';"/>
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		-->
+		<link type="text/css" rel="stylesheet" href="./glyphicon.css" />
+		<style>
+			body { position:relative; padding:0; margin:0; width:100vw; height:100vh; overflow:auto; font-size:16px; }
+				main { position:relative; z-index:1; width:100%; margin-top:3rem; }
+					main .icon { 
+						float:left; display:flex; justify-content: center; align-items: center;
+						width:4rem; height:4rem; font-size:3rem; margin:0.5rem; cursor:pointer;
+						box-sizing:border-box; border-radius: 10px; border:solid 5px rgba(0,0,0,0);
+					}
+					main .icon.picked, main .icon.selected, main .icon.not-picked {  }
+					main .icon.selected { border-color:#0AA !important;  }
+					main .icon.picked { /*border:solid 5px #A0A;*/ }
+					main .icon.not-picked { display:none; /*color:#BBB;*/ }
+				
+				nav { position:fixed; top:0; left:0; width:100%; height:3rem; line-height:3rem; z-index:999; font-size:2rem; background:#FFF; border-bottom:1px solid #000; box-sizing:border-box; text-align:center; }
+					nav > div:first-child { float:left; width:calc(70% - 1rem); height:100%; margin:0 0.5rem; }
+					nav > div:last-child { float:left; width:calc(30% - 1rem); height:100%; margin:0 0.5rem; }
+						nav > div input[type="text"] {
+							display:block; width:100%; height:100%; padding:0 0.5rem;
+							border:none; font-size:inherit; outline:none;
+						}
+				
+			.clearfix { zoom: 1; }
+			.clearfix:before, .clearfix:after { content: ""; display: table; }
+			.clearfix:after { clear: both; }
+		</style>
+		<title>FlatUI Glyphicons</title>
+	</head>
+	<body>
+		<main class='clearfix' id="display-zone"></main>
+		<nav class='clearfix'>
+			<div id="output-zone">ICON INFO</div>
+			<div id="query-zone"><input id="query-input" type="text" placeholder="Search..."/></div>
+		</nav>
+		<script id="tmpl" type="text/plain">
+triangle-up e600
+triangle-down e601
+triangle_up_small e602
+triangle_down_small e603
+triangle_left_large e604
+triangle_right_large e605
+arrow_left e606
+arrow_right e607
+plus e608
+cross e609
+check e60a
+radio_unchecked e60b
+radio_checked e60c
+checkbox_unchecked e60d
+checkbox_checked e60e
+info_circle e60f
+alert_circle e610
+question_circle e611
+check_circle e612
+cross_circle e613
+plus_circle e614
+pause e615
+play e616
+volume e617
+mute e618
+resize e619
+list e61a
+list_thumbnailed e61b
+list_small_thumbnails e61c
+list_large_thumbnails e61d
+list_numbered e61e
+list_columned e61f
+list_bulleted e620
+window e621
+windows e622
+loop e623
+cmd e624
+mic e625
+heart e626
+location e627
+new e628
+video e629
+photo e62a
+time e62b
+eye e62c
+chat e62d
+home e62e
+upload e62f
+search e630
+user e631
+mail e632
+lock e633
+power e634
+calendar e635
+gear e636
+bookmark e637
+exit e638
+trash e639
+folder e63a
+bubble e63b
+export e63c
+calendar_solid e63d
+star e63e
+star_2 e63f
+credit_card e640
+clip e641
+link e642
+tag e643
+document e644
+image e645
+facebook e646
+youtube e647
+vimeo e648
+twitter e649
+spotify e64a
+skype e64b
+pinterest e64c
+path e64d
+linkedin e64e
+google_plus e64f
+dribbble e650
+behance e651
+stumbleupon e652
+yelp e653
+wordpress e654
+windows_8 e655
+vine e656
+tumblr e657
+paypal e658
+lastfm e659
+instagram e65a
+html5 e65b
+github e65c
+foursquare e65d
+dropbox e65e
+android e65f
+apple e660
+		</script>
+		<script type="module">
+			const class_prefix = 'glyph-flatui-';
+			const zone = document.querySelector( '#display-zone' );
+			const output = document.querySelector( '#output-zone' );
+			const query_zone = document.querySelector( '#query-input' );
+			
+			
+			const glyphicons = document.querySelector( '#tmpl' ).textContent.trim().split("\n");
+			const all_icons = [];
+			for(const glyphicon of glyphicons) {
+				const names = glyphicon.split(' ');
+				const code_point = names.pop();
+				
+				for ( const name of names ) {
+					const class_name = `${class_prefix}${name.trim().replace(/_/g, '-')}`;
+					const icon = document.createElement( 'div' );
+					icon.classList.add( 'icon' );
+					icon.innerHTML = `<span class='${class_name}'></span>`;
+					icon.dataset.refClass = class_name;
+					icon.dataset.refPoint = code_point;
+					zone.appendChild(icon);
+					all_icons.push(icon);
+				}
+			}
+			
+			
+			query_zone.addEventListener('keyup', function() {
+				const search_text = query_zone.value.trim();
+				if ( search_text === '' ) {
+					for(const item of all_icons) {
+						item.classList.remove( 'picked', 'not-picked' );
+					}
+					return;
+				}
+				
+				
+				const regex = new RegExp( `.*(${search_text}).*` );
+				const all_tags = zone.querySelectorAll( ".icon" );
+				for( const item of all_tags ) {
+					const item_text = item.dataset.refClass.substring(class_prefix.length);
+					if ( regex.test(item_text) ) {
+						item.closest('.icon').classList.add( 'picked' );
+						item.closest('.icon').classList.remove( 'not-picked' );
+					}
+					else {
+						item.closest('.icon').classList.remove( 'picked' );
+						item.closest('.icon').classList.add( 'not-picked' );
+					}
+					
+					
+				}
+			});
+			
+			
+			
+			
+			let current_selection = null;
+			zone.addEventListener('click', function(e){
+				const item = e.target.closest( 'main .icon' );
+				if ( !item ) return;
+				
+				const {refClass:class_name, refPoint:code_point} = item.dataset;
+				output.innerHTML = `CLASS: ${class_name}`;
+				
+				if ( current_selection ) {
+					current_selection.classList.remove( 'selected' );
+				}
+				
+				item.classList.add( 'selected' );
+				current_selection = item;
+			});
+		</script>
+	</body>
+</html>
