@@ -28,6 +28,9 @@ This script is used to create an static 'identifier' file at /etc/uniqidentity
 that is served as an uniqe identifier for the host.
 """
 
+"""
+VERSION: 0.9.0
+"""
 import os, uuid, stat, time
 
 if os.name == 'nt':
