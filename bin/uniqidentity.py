@@ -31,23 +31,23 @@ that is served as an uniqe identifier for the host.
 """
 VERSION: 0.9.0
 """
-import os, uuid, stat, time
+import os, uuid, stat, time, sys
 
 if os.name == 'nt':
-    print("This script doesn't support windows environment!")
+    print("This script doesn't support windows environment!", file=sys.stderr)
     exit(1)
 
 PROFILE_SCRIPT = "/etc/uniqidenty"
 try:
     st = os.stat(PROFILE_SCRIPT)
     if not stat.S_ISREG(st.st_mode):
-        print(f"{PROFILE_SCRIPT} is a directory!")
+        print(f"{PROFILE_SCRIPT} is a directory!", file=sys.stderr)
         exit(1)
     os.access(PROFILE_SCRIPT, os.R_OK)
 except FileNotFoundError:
     pass
 except PermissionError:
-    print(f"{PROFILE_SCRIPT} is not readable by current user!")
+    print(f"{PROFILE_SCRIPT} is not readable by current user!", file=sys.stderr)
     exit(1)
 else:
     with open(PROFILE_SCRIPT, 'r') as f:
@@ -65,5 +65,8 @@ try:
         f.write(f"{uuid_val},{now}\n")
         print(uuid_val)
 except PermissionError:
-    print(f"/etc is not writable by current user! Unable to generate /etc/uniqidentity file!")
+    print(f"Permission denied! Unable to generate /etc/uniqidentity file!", file=sys.stderr)
+    exit(1)
+except Exception as err:
+    print(f"Unable to generate /etc/uniqidentity file: {err=}", file=sys.stderr)
     exit(1)
