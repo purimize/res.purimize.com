@@ -65,7 +65,8 @@ function ConvertAbsPath(path:string):string {
 	}
 }
 
-function IsPlainObject(d:any) { return Object(d) === d && !Array.isArray(d); }
+//function IsPlainObject(d:any) { return Object(d) === d && !Array.isArray(d); }
+function IsPlainObject(d:any) { return Object.prototype.toString.call(d) === "[object Object]"; }
 function DeepMerge(receiver:{[key:string]:any}, ...sources:any[]):{[key:string]:any}|undefined {
 	if ( !IsPlainObject(receiver) ) return undefined;
 	for(const source of sources) {
