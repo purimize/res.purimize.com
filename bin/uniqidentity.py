@@ -37,7 +37,7 @@ if os.name == 'nt':
     print("This script doesn't support windows environment!", file=sys.stderr)
     exit(1)
 
-PROFILE_SCRIPT = "/etc/uniqidenty"
+PROFILE_SCRIPT = "/etc/uniqidentity"
 try:
     st = os.stat(PROFILE_SCRIPT)
     if not stat.S_ISREG(st.st_mode):
