@@ -52,7 +52,7 @@ except PermissionError:
 else:
     with open(PROFILE_SCRIPT, 'r') as f:
         mid = f.readline().split(',')[0]
-        print(f"Uniqidentity: {mid}")
+        print(mid)
     exit(0)
 
 
@@ -63,7 +63,7 @@ try:
     with open(PROFILE_SCRIPT, 'w') as f:
         os.chmod(PROFILE_SCRIPT, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
         f.write(f"{uuid_val},{now}\n")
-        print(f"Uniqidentity: {uuid_val}")
+        print(uuid_val)
 except PermissionError:
     print(f"/etc is not writable by current user! Unable to generate /etc/uniqidentity file!")
     exit(1)
