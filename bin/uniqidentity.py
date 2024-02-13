@@ -34,10 +34,6 @@ if os.name == 'nt':
     print("This script doesn't support windows environment!")
     exit(1)
 
-if os.geteuid() != 0:
-    print("This script must be run by root user!")
-    exit(1)
-
 PROFILE_SCRIPT = "/etc/uniqidenty"
 try:
     st = os.stat(PROFILE_SCRIPT)
@@ -56,8 +52,15 @@ else:
         print(f"Uniqidentity: {mid}")
     exit(0)
 
-uuid_val = uuid.uuid4()
-now = int(time.time())
-with open(PROFILE_SCRIPT, 'w') as f:
-    os.chmod(PROFILE_SCRIPT, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
-    f.write(f"{uuid_val},{now}\n")
+
+
+try:
+    uuid_val = uuid.uuid4()
+    now = int(time.time())
+    with open(PROFILE_SCRIPT, 'w') as f:
+        os.chmod(PROFILE_SCRIPT, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
+        f.write(f"{uuid_val},{now}\n")
+        print(f"Uniqidentity: {uuid_val}")
+except PermissionError:
+    print(f"/etc is not writable by current user! Unable to generate /etc/uniqidentity file!")
+    exit(1)
