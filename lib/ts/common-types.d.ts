@@ -24,7 +24,7 @@ declare type json_str		= string;
 declare type uniqid			= string;
 
 
-declare type AnyObject = {[key:string|number|symbol]:any}
+
 declare type EmptyObject = {[K in any]:never};
 declare type Without<T, U> = {[P in Exclude<keyof T, keyof U>]?:never};
 declare type XOR<T, U> = (T | U) extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U;
@@ -34,3 +34,4 @@ declare type ObjectValues<T extends {[key:string]:any}> = T[keyof T];
 declare type MakeRequired<T, R extends keyof T> = T & Required<Pick<T, R>>;
 declare type MakePartial<T, R extends keyof T> = Omit<T, R> & Partial<Pick<T, R>>;
 declare type MakeExcluded<T, E extends keyof T> = Omit<T, E>;
+declare type JSONType = null|string|number|boolean|{[x:string]:JSONType}|Array<JSONType>;
