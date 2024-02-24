@@ -6,19 +6,41 @@ interface LocateResult<MetaType=any> {
 
 export class Router {
 	#route:RouteInfo[] = [];
+	#route_plain:RouteInfo[] = [];
 
 	static init():Router { return new Router() }
 
 	route(route:string, meta:any):this {
-		this.#route.push({
+		const route_result = match(route, {decode:decodeURIComponent});
+		const route_ctnt:RouteInfo = {
 			route_path: route,
-			matcher:match(route, {decode:decodeURIComponent}),
+			matcher:route_result,
 			meta
-		});
+		};
+
+		if ( route_result.plain_route ) {
+			this.#route_plain.push(route_ctnt);
+		}
+		else {
+			this.#route.push(route_ctnt)
+		}
 		return this;
 	}
 
 	locate<MetaType=any>(path:string):LocateResult<MetaType>|null {
+		for(const route of this.#route_plain) {
+			const match_result = route.matcher(path);
+			if ( match_result ) {
+				return {
+					route:route.route_path,
+					path,
+					meta:route.meta,
+					params:match_result.params as any
+				};
+			}
+		}
+
+
 		for(const route of this.#route) {
 			const match_result = route.matcher(path);
 			if ( match_result ) {
@@ -49,10 +71,10 @@ if ( require && Object(require) === require && require.main === module ) {
 		router.route('/user/:userId', (info:LocateResult)=>{
 			console.log('ROUTE:', info.route, 'PATH:', info.path, 'PARAMS:', info.params);
 		});
-		router.route('/product/create', (info:LocateResult)=>{
+		router.route('/product/:productId', (info:LocateResult)=>{
 			console.log('ROUTE:', info.route, 'PATH:', info.path, 'PARAMS:', info.params);
 		});
-		router.route('/product/:productId', (info:LocateResult)=>{
+		router.route('/product/create', (info:LocateResult)=>{
 			console.log('ROUTE:', info.route, 'PATH:', info.path, 'PARAMS:', info.params);
 		});
 		router.route('/product/:productId/info', (info:LocateResult)=>{
@@ -69,8 +91,11 @@ if ( require && Object(require) === require && require.main === module ) {
 
 		// 假設使用者的路徑為 '/product/abc'
 		const paths = [
-			'/product/abc',
 			'/product/create',
+			'/product/abc',
+			'/product/cde',
+			'/product/create/a/b/c',
+			'/product/dsdsadas/a/b/c',
 			'/product/cde/info'
 		];
 
@@ -469,10 +494,18 @@ type MatchFunction<P extends object = object> = (
 function match<P extends object = object>(
 	str: Path,
 	options?: ParseOptions & TokensToRegexpOptions & RegexpToFunctionOptions
-) {
+):MatchFunction&{plain_route:boolean} {
 	const keys: Key[] = [];
-	const re = pathToRegexp(str, keys, options);
-	return regexpToFunction<P>(re, keys, options);
+	const regexp = pathToRegexp(str, keys, options);
+	const func = regexpToFunction<P>(regexp, keys, options);
+
+	Object.defineProperty(func, 'plain_route', {
+		configurable:false, writable:false, enumerable:false,
+		value: !!regexp.is_plain
+	});
+
+	// @ts-ignore
+	return func;
 }
 
 /**
@@ -626,7 +659,7 @@ function tokensToRegexp(
 	tokens: Token[],
 	keys?: Key[],
 	options: TokensToRegexpOptions = {}
-) {
+):RegExp&{is_plain:boolean} {
 	const {
 		strict = false,
 		start = true,
@@ -640,10 +673,15 @@ function tokensToRegexp(
 	let route = start ? "^" : "";
 
 	// Iterate over the tokens and create our regexp string.
+	let is_plain:boolean = true;
 	for (const token of tokens) {
 		if (typeof token === "string") {
+			is_plain = is_plain && true;
+
 			route += escapeString(encode(token));
 		} else {
+			is_plain = is_plain && false;
+
 			const prefix = escapeString(encode(token.prefix));
 			const suffix = escapeString(encode(token.suffix));
 
@@ -690,7 +728,7 @@ function tokensToRegexp(
 		}
 	}
 
-	return new RegExp(route, flags(options));
+	return Object.assign(new RegExp(route, flags(options)), {is_plain});
 }
 
 /**
@@ -709,7 +747,7 @@ function pathToRegexp(
 	path: Path,
 	keys?: Key[],
 	options?: TokensToRegexpOptions & ParseOptions
-) {
+):RegExp&{is_plain?:boolean;} {
 	if (path instanceof RegExp) return regexpToRegexp(path, keys);
 	if (Array.isArray(path)) return arrayToRegexp(path, keys, options);
 	return stringToRegexp(path, keys, options);
