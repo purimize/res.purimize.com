@@ -64,39 +64,41 @@ declare global {
 	});
 }
 
-Object.defineProperties(EventTarget.prototype, {
-	on: {
-		configurable:true, enumerable:false, writable:true,
-		value: function(event:string, callback:EventBusEventListener):symbol {
-			const handler_symbol = Symbol(handler_count++);
-			HandlerRef.set(handler_symbol, {event, func:callback});
-			
-			this.addEventListener(event, callback);
-			return handler_symbol;
-		}
-	},
-	off: {
-		configurable:true, enumerable:false, writable:true,
-		value: function(arg1:symbol|string, arg2?:{(e:Event):void}|undefined):void {
-			if ( typeof arg1 === "string" ) {
-				this.removeEventListener(arg1, arg2!);
-				return;
+{
+	Object.defineProperties(EventTarget.prototype, {
+		on: {
+			configurable:true, enumerable:false, writable:true,
+			value: function(event:string, callback:EventBusEventListener):symbol {
+				const handler_symbol = Symbol(handler_count++);
+				HandlerRef.set(handler_symbol, {event, func:callback});
+				
+				this.addEventListener(event, callback);
+				return handler_symbol;
 			}
-			
-			const ref = HandlerRef.get(arg1);
-			if ( !ref ) return;
-	
-			HandlerRef.delete(arg1);
-			this.removeEventListener(ref.event, ref.func);
+		},
+		off: {
+			configurable:true, enumerable:false, writable:true,
+			value: function(arg1:symbol|string, arg2?:{(e:Event):void}|undefined):void {
+				if ( typeof arg1 === "string" ) {
+					this.removeEventListener(arg1, arg2!);
+					return;
+				}
+				
+				const ref = HandlerRef.get(arg1);
+				if ( !ref ) return;
+		
+				HandlerRef.delete(arg1);
+				this.removeEventListener(ref.event, ref.func);
+			}
+		},
+		emit: {
+			configurable:true, enumerable:false, writable:true,
+			value: function(event:string, data?:{[key:string]:any}, bubbles:boolean=true):void {
+				this.dispatchEvent(Object.assign(new Event(event, {bubbles}), data||{}))
+			}
 		}
-	},
-	emit: {
-		configurable:true, enumerable:false, writable:true,
-		value: function(event:string, data?:{[key:string]:any}, bubbles:boolean=true):void {
-			this.dispatchEvent(Object.assign(new Event(event, {bubbles}), data||{}))
-		}
-	}
-});
+	});
+}
 
 
 
@@ -158,40 +160,74 @@ export class HTMLModule extends HTMLElement {
 	}
 }
 
+interface RegisterOptions { tagName:string; tmpl?:string; };
+export class ElmJS {
+	static get HTMLModule() { return HTMLModule }
+	
+	static createElement<ElementType extends Element=Element>(html:string, resolve_exports:boolean=true):ElementType|null {
+		const template = document.createElement('template');
+		template.innerHTML = html.trim();
+		if ( template.content.children.length > 1 ) {
+			throw new RangeError("Given html string must contains only one element!");
+		}
+
+		const element = template.content.children[0] as ElementType;
+		if ( !element ) return null;
+
+		template.content.removeChild(element);
+
+		// @ts-ignore
+		return resolve_exports ? element : ElmResolve(element);
+	}
+	static createElements(html:string, resolve_exports:boolean=true):DocumentFragment {
+		const template = document.createElement('template');
+		template.innerHTML = html.trim();
+		return resolve_exports ? template.content : this.resolveExports(template.content);
+	}
+	static createElementsAtAnchor(anchor_selector:string, html:string, options:{resolveExports?:boolean, keepAnchor?:boolean}={}):void {
+		const resolve_exports = options.resolveExports === undefined ? true : !!options.resolveExports;
+		const keep_anchor = options.keepAnchor === undefined ? false : !!options.keepAnchor;
 
 
-export function ElmCreateElement(html:string):Element|null {
-	const template = document.createElement('template');
-	template.innerHTML = html.trim();
-	if ( template.content.children.length > 1 ) {
-		throw new RangeError("Given html string must contains only one element!");
+		const anchor = document.querySelector(anchor_selector)!;
+		const fragment = this.createElements(html, resolve_exports);
+
+		
+		let looper = anchor;
+		for(const frag of Array.prototype.slice.call(fragment.children)) {
+			looper.insertAdjacentElement('afterend', frag as HTMLElement);
+			looper = frag;
+		}
+	
+		if ( !keep_anchor ) {
+			anchor.remove();
+		}
 	}
 
-	const element = template.content.children[0];
-	if ( !element ) return null;
-
-	template.content.removeChild(element);
-	return ElmResolve(element);
-}
-
-export function ElmCreateElements(html:string):DocumentFragment {
-	const template = document.createElement('template');
-	template.innerHTML = html.trim();
-	return ElmResolve(template.content);
-}
-
-export function ElmResolve(root_element:Element):Element;
-export function ElmResolve(root_element:DocumentFragment):DocumentFragment;
-export function ElmResolve(root_element:Element|DocumentFragment):Element|DocumentFragment {
-	if ( !(root_element instanceof Element) && !(root_element instanceof DocumentFragment) ) {
-		throw new TypeError("Given argument must be an Element or a DocumentFragment or an Element array");
+	static resolveExports<ElementType extends Element=Element>(root_element:ElementType):ElementType;
+	static resolveExports(root_element:DocumentFragment):DocumentFragment;
+	static resolveExports(root_element:Element|DocumentFragment):Element|DocumentFragment {
+		if ( !(root_element instanceof Element) && !(root_element instanceof DocumentFragment) ) {
+			throw new TypeError("Given argument must be an Element or a DocumentFragment or an Element array");
+		}
+	
+		Object.keys(root_element.exportedElements).forEach((key)=>delete root_element.exportedElements[key]);
+		RecursiveParseRelations(root_element, root_element.exportedElements);
+	
+		return root_element;
 	}
 
-	Object.keys(root_element.exportedElements).forEach((key)=>delete root_element.exportedElements[key]);
-	RecursiveParseRelations(root_element, root_element.exportedElements);
+	static registerModule(class_inst:typeof HTMLModule, options:RegisterOptions&ElementDefinitionOptions):typeof HTMLModule {
+		const extended = (typeof options.extends === "undefined") ? {extends:options.extends} : undefined;
+		ModuleRef.set(class_inst, {template:options.tmpl||null});
+		window.customElements.define(options.tagName, class_inst, extended);
 
-	return root_element;
+		return class_inst;
+	}
 }
+
+
+
 
 function RecursiveParseRelations(root:Element|DocumentFragment, root_map:ExportedElementMap):void {
 	for(const element of root.children) {
@@ -213,17 +249,4 @@ function RecursiveParseRelations(root:Element|DocumentFragment, root_map:Exporte
 			RecursiveParseRelations(element, element.exportedElements);
 		}
 	}
-}
-
-
-
-
-
-
-
-interface RegisterOptions { tagName:string; tmpl?:string; };
-export function RegisterModule(class_inst:typeof HTMLModule, options:RegisterOptions&ElementDefinitionOptions):void {
-	const extended = (typeof options.extends === "undefined") ? {extends:options.extends} : undefined;
-	ModuleRef.set(class_inst, {template:options.tmpl||null});
-	window.customElements.define(options.tagName, class_inst, extended);
 }
