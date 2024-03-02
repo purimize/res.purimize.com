@@ -176,8 +176,7 @@ export class ElmJS {
 
 		template.content.removeChild(element);
 
-		// @ts-ignore
-		return resolve_exports ? element : ElmResolve(element);
+		return resolve_exports ? element : this.resolveExports(element);
 	}
 	static createElements(html:string, resolve_exports:boolean=true):DocumentFragment {
 		const template = document.createElement('template');
