@@ -22,7 +22,7 @@ declare type epoch_milli	= number;
 declare type num_str		= string;
 declare type json_str		= string;
 declare type uniqid			= string;
-
+declare type uuid			= string;
 
 
 declare type EmptyObject = {[K in any]:never};
