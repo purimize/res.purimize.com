@@ -110,23 +110,19 @@ export interface EventBusEventListener<EventType extends Event = Event> {(e:Even
 
 let handler_count:number = 0;
 const HandlerRef:Map<Symbol, {event:string; func:EventBusEventListener<any>}> = new Map();
-const ModuleRef:WeakMap<any, {template:string|null}> = new WeakMap();
+const ModuleRef:WeakMap<any, {content_html:string|null}> = new WeakMap();
 export class HTMLModule extends HTMLElement {
 	#init:boolean = false;
 	#template:DocumentFragment|null = null;
 
 	constructor() {
 		super();
-		const {template} = ModuleRef.get(this.constructor)||{};
-		if ( template ) {
+		const {content_html} = ModuleRef.get(this.constructor)||{};
+		if ( content_html ) {
 			const temp_elm = document.createElement('template');
-			temp_elm.innerHTML = template;
-			this.#template = temp_elm.content;
+			temp_elm.innerHTML = content_html;
+			this.appendChild(temp_elm.content)
 		}
-	}
-	
-	get template() {
-		return this.#template;
 	}
 	
 	connectedCallback() {
@@ -160,7 +156,7 @@ export class HTMLModule extends HTMLElement {
 	}
 }
 
-interface RegisterOptions { tagName:string; tmpl?:string; };
+interface RegisterOptions { tagName:string; tmpl?:string; view?:string; };
 export class ElmJS {
 	static get HTMLModule() { return HTMLModule }
 	
@@ -175,7 +171,7 @@ export class ElmJS {
 		if ( !element ) return null;
 
 		template.content.removeChild(element);
-		
+
 		return resolve_exports ? this.resolveExports(element) : element;
 	}
 	static createElements(html:string, resolve_exports:boolean=true):DocumentFragment {
@@ -218,7 +214,7 @@ export class ElmJS {
 
 	static registerModule(class_inst:typeof HTMLModule, options:RegisterOptions&ElementDefinitionOptions):typeof HTMLModule {
 		const extended = (typeof options.extends === "undefined") ? {extends:options.extends} : undefined;
-		ModuleRef.set(class_inst, {template:options.tmpl||null});
+		ModuleRef.set(class_inst, {content_html:options.view||options.tmpl||null});
 		window.customElements.define(options.tagName, class_inst, extended);
 
 		return class_inst;
