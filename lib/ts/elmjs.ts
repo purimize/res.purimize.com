@@ -156,7 +156,7 @@ export class HTMLModule extends HTMLElement {
 	}
 }
 
-interface RegisterOptions { tagName:string; tmpl?:string; view?:string; };
+interface RegisterOptions { tagName:string; view?:string; };
 export class ElmJS {
 	static get HTMLModule() { return HTMLModule }
 	
@@ -214,7 +214,7 @@ export class ElmJS {
 
 	static registerModule(class_inst:typeof HTMLModule, options:RegisterOptions&ElementDefinitionOptions):typeof HTMLModule {
 		const extended = (typeof options.extends === "undefined") ? {extends:options.extends} : undefined;
-		ModuleRef.set(class_inst, {content_html:options.view||options.tmpl||null});
+		ModuleRef.set(class_inst, {content_html:options.view||null});
 		window.customElements.define(options.tagName, class_inst, extended);
 
 		return class_inst;
