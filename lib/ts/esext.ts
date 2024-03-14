@@ -58,7 +58,7 @@ Object.defineProperty(Date.prototype, 'getUnixTime', {
 		return Math.floor(this.getTime() / 1000);
 	}
 });
-Object.defineProperty(Date, 'toLocaleISOString', {
+Object.defineProperty(Date.prototype, 'toLocaleISOString', {
 	configurable: true, enumerable: false, writable: true,
 	value: function(show_milli: boolean = false) {
 		show_milli = !!show_milli;
@@ -84,7 +84,7 @@ Object.defineProperty(Date, 'toLocaleISOString', {
 			milli + offset;
 	}
 });
-Object.defineProperty(Date, 'toLocalISOString', {
+Object.defineProperty(Date.prototype, 'toLocalISOString', {
 	configurable: true, enumerable: false, writable: true,
 	value: function(show_milli: boolean = false) {
 		show_milli = !!show_milli;
