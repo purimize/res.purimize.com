@@ -16,7 +16,10 @@ declare global {
 		off(symbol:symbol):void;
 		off(event:string, callback:{(e:Event):void}):void;
 		off(arg1:symbol|string, arg2?:{(e:Event):void}|undefined):void;
-		emit(event:string, data?:{[key:string]:any}, bubbles?:boolean):void;
+		emit(event:string):void;
+		emit(event:string, bubbles:boolean):void;
+		emit(event:string, data:{[key:string]:any}):void;
+		emit(event:string, data:{[key:string]:any}, bubbles:boolean):void;
 	}
 }
 
@@ -93,7 +96,12 @@ declare global {
 		},
 		emit: {
 			configurable:true, enumerable:false, writable:true,
-			value: function(event:string, data?:{[key:string]:any}, bubbles:boolean=true):void {
+			value: function(event:string, data?:boolean|{[key:string]:any}, bubbles?:boolean):void {
+				if ( typeof data === "boolean" ) {
+					bubbles = data;
+					data = {};
+				}
+
 				this.dispatchEvent(Object.assign(new Event(event, {bubbles}), data||{}))
 			}
 		}
