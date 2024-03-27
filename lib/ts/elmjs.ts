@@ -102,6 +102,7 @@ declare global {
 					data = {};
 				}
 
+				bubbles = bubbles === undefined ? true : !!bubbles;
 				this.dispatchEvent(Object.assign(new Event(event, {bubbles}), data||{}))
 			}
 		}
