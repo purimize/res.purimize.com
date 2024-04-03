@@ -271,11 +271,15 @@ declare global {
 	}
 }
 
-interface CallbackFunc {():Promise<void>|void};
+interface CallbackFunc {():Promise<any>|any};
 const cleanup_stages :{[key in 'preproc'|'predata'|'data'|'postproc'|'final']:CallbackFunc[]}= { preproc:[], predata:[], data:[], postproc:[], final:[] };
 
+let context_terminating = false;
 export class ContextCtrl {
 	static timeout:number = 30_000;
+	static get terminating():boolean {
+		return context_terminating;
+	}
 	static preproc(cb:CallbackFunc){
 		cleanup_stages.preproc.push(cb);
 	}
@@ -294,6 +298,9 @@ export class ContextCtrl {
 }
 
 process.once('terminate', async(state)=>{
+	if ( context_terminating ) return;
+	context_terminating = true;
+
 	process.emit('terminate:init');
 	let timeout = setTimeout(()=>{
 		console.error("Termination timeout!");
