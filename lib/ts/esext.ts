@@ -253,6 +253,7 @@ interface Uint8ArrayConstructor {
 	readFrom(data: string, conversion:'b62hex'|'b32hex'|'hex'|'bits'|'utf8'|62|32|16|2): Uint8Array;
 	binaryCompare(a: ArrayBuffer | BufferView, b: ArrayBuffer | BufferView): -1 | 0 | 1;
 	binaryDump(buffer: ArrayBuffer | BufferView, format?: 2|16|32|62, padding?: boolean): string;
+	binaryConcat(buffers:(ArrayBuffer|BufferView)[]):Uint8Array;
 }
 (function(){
 	const BIT_FORMAT = /^(0b|0B)?([01]+)$/;
@@ -589,6 +590,37 @@ interface Uint8ArrayConstructor {
             return padding ? result : result.replace(/^0+/, '');
         }
     });
+	
+	Object.defineProperty(Uint8Array, 'binaryConcat', {
+		configurable: true, enumerable: false, writable: true,
+        value: function (buffers:(ArrayBuffer|BufferView)[]):Uint8Array {
+			const bytes = buffers.map((c)=>{
+				if ( c instanceof ArrayBuffer ) {
+					return new Uint8Array(c);
+				}
+				else
+				if ( typeof Buffer !== "undefined" && Buffer.isBuffer(c) ) {
+					return new Uint8Array(c);
+				}
+				else
+				if ( ArrayBuffer.isView(c) ) {
+					return new Uint8Array(c.buffer);
+				}
+				else {
+					return new Uint8Array(0);
+				}
+			});
+			const total_size = bytes.reduce((p, c, i)=>p + c.length, 0);
+
+			const buffer = new Uint8Array(total_size);
+			bytes.reduce((offset, c)=>{
+				buffer.set(c, offset);
+				return offset + c.length;
+			}, 0);
+
+			return buffer;
+		}
+	})
 
 
 
@@ -608,4 +640,36 @@ interface Uint8ArrayConstructor {
 		}
 		return null;
 	}
+})();
+
+
+interface ObjectConstructor {
+	stripProperties<DataType extends Record<string, any>=any, RemoveProps extends (keyof DataType)[] = (keyof DataType)[]>(data:DataType, props:RemoveProps):Omit<DataType, RemoveProps[number]>;
+	pickProperties<DataType extends Record<string, any>=any, PickedProps extends (keyof DataType)[] = (keyof DataType)[]>(data:DataType, props:PickedProps):Pick<DataType, PickedProps[number]>;
+}
+(async()=>{
+	Object.defineProperty(Object, 'stripProperties', {
+		configurable: true, enumerable: false, writable: true,
+		value: function<DataType extends Record<string, any>=any, RemoveProps extends (keyof DataType)[] = []>(data:DataType, props:RemoveProps):Omit<DataType, RemoveProps[number]> {
+			const copy:Partial<DataType> = Object.assign({}, data);
+			for(const field of props) {
+				delete copy[field];
+			}
+
+			return copy as Omit<DataType, RemoveProps[number]>;
+		}
+	});
+	console.log(Object.stripProperties);
+	Object.defineProperty(Object, 'pickProperties', {
+		configurable: true, enumerable: false, writable: true,
+		value: function<DataType extends Record<string, any>=any, PickedProps extends (keyof DataType)[] = []>(data:DataType, props:PickedProps):Pick<DataType, PickedProps[number]> {
+			const copy:Partial<DataType> = Object.assign({}, data);
+			for(const key in copy) {
+				if ( props.indexOf(key) < 0 ) continue;
+				delete copy[key];
+			}
+
+			return copy as Pick<DataType, PickedProps[number]>;
+		}
+	});
 })();
