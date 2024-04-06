@@ -659,7 +659,6 @@ interface ObjectConstructor {
 			return copy as Omit<DataType, RemoveProps[number]>;
 		}
 	});
-	console.log(Object.stripProperties);
 	Object.defineProperty(Object, 'pickProperties', {
 		configurable: true, enumerable: false, writable: true,
 		value: function<DataType extends Record<string, any>=any, PickedProps extends (keyof DataType)[] = []>(data:DataType, props:PickedProps):Pick<DataType, PickedProps[number]> {
